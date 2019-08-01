@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+* { margin: 0; padding: 0; }
+body { font-family: 'Roboto', sans-serif; font-size: 24px; background-color: #EAEBED; color: #37474F; overflow-y: hidden; }
+
+
+.contain1 {
+    display: flex;
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo1 { position: absolute; top: 100px }
+
+.but1 { position: absolute; bottom: 150px; padding: 20px 70px; border: 1px #cccccc solid; background-color: aliceblue; }
+
+.but2 { position: absolute; bottom: 50px; padding: 20px 70px; border: 1px #cccccc solid; background-color: aliceblue; }
+
