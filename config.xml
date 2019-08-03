@@ -7,6 +7,8 @@
 
 <!-- versionCode is optional and Android only -->
 
+  <access origin="http://rieltorov.net" />
+
   <name>PhoneGap приложение</name>
 
   <description>
