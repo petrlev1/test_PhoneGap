@@ -7,8 +7,17 @@
     <link href="style/general.css" rel="stylesheet">
     <script src="scripts/jquery-3.3.1.min.js"></script>
     <title></title>
-	
-	<script>
+
+</head>
+<body>
+
+<p><b>Insert something:</b></p>
+<form> 
+Test field: <input type="text" onkeyup="showHint(this.value)">
+</form>
+<p>Result: <span id="txtHint"></span></p>
+
+<script>
 function showHint(str) {
     if (str.length == 0) { 
         document.getElementById("txtHint").innerHTML = "";
@@ -25,15 +34,6 @@ function showHint(str) {
     }
 }
 </script>
-
-</head>
-<body>
-
-<p><b>Insert something:</b></p>
-<form> 
-Test field: <input type="text" onkeyup="showHint(this.value)">
-</form>
-<p>Result: <span id="txtHint"></span></p>
 
 </body>
 </html>
