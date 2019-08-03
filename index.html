@@ -15,7 +15,8 @@
 <form> 
 Test field: <input type="text" onkeyup="showHint(this.value)">
 </form>
-<p>Result: <span id="txtHint"></span></p>
+<div><p>Result: <span id="txtHint"></span></p></div>
+<div><p>Result2: <span id="txtHint2"></span></p></div>
 
 <script>
 function showHint(str) {
@@ -31,6 +32,9 @@ function showHint(str) {
         };
         xmlhttp.open("GET", "http://rieltorov.net/gethint.php?q=" + str, true);
         xmlhttp.send();
+		
+		$("#txtHint2").html("test text");
+		
     }
 }
 </script>
