@@ -5,9 +5,11 @@ body { font-family: 'Roboto', sans-serif; font-size: 24px; background-color: #ff
 
 a { text-decoration: none }
 
-.head1 { position: relative; height: 95px; background: #F4F4F4; }
+textarea:focus, input:focus { outline: none; }
 
-.logo1 { position: absolute; top: 5px; left: 20px; }
+.head1 { position: fixed; top: 0; left: 0; right: 0; height: 95px; background: #F4F4F4; z-index: 2 }
+
+.logo1 { position: absolute; top: 5px; left: 10px; }
 .logo1 img { width: 84px; }
 
 .basketCont { position: absolute; top: 13px; right: 95px; }
@@ -25,6 +27,8 @@ a { text-decoration: none }
 
 .icFiltr { position: absolute; right: 16px; top: 2px; }
 .icFiltr img { width: 32px; }
+
+.productCont { padding: 100px 0 0 0 }
 
 .productItem1 { position: relative; border-bottom: 1px solid #E1E1E1; padding: 3px 0 }
 .productItem1Img img { float: left; left: 2px; top: 0; width: 60px; margin: 3px 5px 3px 0 }
