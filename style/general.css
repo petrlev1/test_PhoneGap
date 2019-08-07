@@ -1,23 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
 
 * { margin: 0; padding: 0; }
-body { font-family: 'Roboto', sans-serif; font-size: 24px; background-color: #EAEBED; color: #37474F; overflow-y: hidden; }
+body { font-family: 'Roboto', sans-serif; font-size: 24px; background-color: #ffffff; color: #37474F; }
+
+a { text-decoration: none }
+
+.head1 { position: relative; height: 95px; background: #F4F4F4; }
+
+.logo1 { position: absolute; top: 5px; left: 20px; }
+.logo1 img { width: 84px; }
+
+.basketCont { position: absolute; top: 13px; right: 95px; }
+.basketCont img { width: 30px; }
+.basketCont span { position: absolute; top: 5px; left: 35px; font-size: 12px; font-weight: bold; padding: 2px 6px; color: #FFFFFF; background: #2A7D2E; border-radius: 25px; }
+
+.icDopMenu { position: absolute; right: 18px; top: 15px; }
+.icDopMenu img { width: 20px; }
+
+.inputSearch { position: absolute; height: 35px; left: 0; right: 0; bottom: 0; border-top: 1px solid #D9D9D9; border-bottom: 1px solid #D9D9D9; }
+.inputSearch input { position: absolute; width: 100%; box-sizing: border-box; font-size: 14px; color: #969696; height: 35px; padding: 10px 70px 10px 45px; bottom: 0; border: none }
+
+.icSearch { position: absolute; top: 6px; left: 10px }
+.icSearch img { width: 23px; }
+
+.icFiltr { position: absolute; right: 16px; top: 2px; }
+.icFiltr img { width: 32px; }
+
+.productItem1 { position: relative; border-bottom: 1px solid #E1E1E1; padding: 3px 0 }
+.productItem1Img img { float: left; left: 2px; top: 0; width: 60px; margin: 3px 5px 3px 0 }
+.productItem1Cont { position: relative; padding: 8px 10px; }
+.productItem1 h1 { font-size: 14px; color: #2A7D2E; margin: 0 0 2px 0 }
+.productItem1 p { font-size: 12px; color: #837561; }
+.productItem1Price { font-size: 14px; font-weight: bold; color: #837561; }
+.productItem1But { font-weight: bold; font-size: 9px; color: #FFFFFF; padding: 6px 8px; background: #0077BE; border-radius: 5px; }
 
 
-.contain1 {
-    display: flex;
-  position:fixed;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo1 { position: absolute; top: 100px }
-
-.but1 { position: absolute; bottom: 150px; padding: 20px 70px; border: 1px #cccccc solid; background-color: aliceblue; }
-
-.but2 { position: absolute; bottom: 50px; padding: 20px 70px; border: 1px #cccccc solid; background-color: aliceblue; }
 
