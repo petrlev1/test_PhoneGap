@@ -6,17 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport">
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="style/bootstrapTable.css" />
     <link href="style/general.css" rel="stylesheet">
     <script src="scripts/jquery-3.3.1.min.js"></script>
     <script src="scripts/general.js"></script>
 <title></title>
 </head>
 
-<body>
+<body data-page="catalog">
 <div class="head1">
-<a href="#" class="logo1"><img src="style/img/logo1.png"></a>
-<a href="#" class="basketCont"><img src="style/img/icBasket.png"><span>2</span></a>
+<a href="index.html" class="logo1"><img src="style/img/logo1.png"></a>
+<a rel="nofollow" href="cart.html" class="basketCont"><img src="style/img/icBasket.png"><span id="total-cart-count"></span></a>
 <a href="#" class="icDopMenu"><img src="style/img/icDopMenu.png"></a>
 <div class="inputSearch">
 <input name="" type="text">
@@ -25,97 +24,39 @@
 </div>
 </div>
 
-<div class="productCont">
 
-<div class="productItem1">
-<div class="productItem1Img"><img src="style/img/testPic.jpg"></div>
+
+    <div id="goods" class="productCont">
+        <img src="img/loading.gif" alt="" rel="nofollow">
+    </div>
+
+
+
+
+<script id="catalog-template" type="text/template">
+    <% _.each(goods, function(good) { %>
+        <div class="productItem1">
+<div class="productItem1Img"><img class="good-item__img" src="<%- good.img %>" /></div>
 <div class="productItem1Cont">
-<h1>Beсk's - Германия</h1>
-<p>Страна производитель: Германия 0% алк: -Упаковка: бутылка 0,33л 24 шт.</p>
-<div class="productItem1Price">2650 руб.</div>
-<a href="#" class="productItem1But">ДОБАВИТЬ В КОРЗИНУ</a>
+<h1><%- good.name %></h1>
+<p>Артикул <%= good.id %></p>
+<div class="productItem1Price"><%= good.price %> руб.</div>
+                <button 
+                    class="good-item__btn-add js-add-to-cart productItem1But"
+                    data-id="<%= good.id %>"
+                    data-name="<%- good.name %>"
+                    data-price="<%= good.price %>"
+                >ДОБАВИТЬ В КОРЗИНУ</button>
 </div>
 <div style="clear:both"></div>
 </div>
+    <% }); %>
+</script>
 
-<div class="productItem1">
-<div class="productItem1Img"><img src="style/img/testPic.jpg"></div>
-<div class="productItem1Cont">
-<h1>Beсk's - Германия</h1>
-<p>Страна производитель: Германия 0% алк: -Упаковка: бутылка 0,33л 24 шт.</p>
-<div class="productItem1Price">2650 руб.</div>
-<a href="#" class="productItem1But">ДОБАВИТЬ В КОРЗИНУ</a>
-</div>
-<div style="clear:both"></div>
-</div>
-
-<div class="productItem1">
-<div class="productItem1Img"><img src="style/img/testPic.jpg"></div>
-<div class="productItem1Cont">
-<h1>Beсk's - Германия</h1>
-<p>Страна производитель: Германия 0% алк: -Упаковка: бутылка 0,33л 24 шт.</p>
-<div class="productItem1Price">2650 руб.</div>
-<a href="#" class="productItem1But">ДОБАВИТЬ В КОРЗИНУ</a>
-</div>
-<div style="clear:both"></div>
-</div>
-
-<div class="productItem1">
-<div class="productItem1Img"><img src="style/img/testPic.jpg"></div>
-<div class="productItem1Cont">
-<h1>Beсk's - Германия</h1>
-<p>Страна производитель: Германия 0% алк: -Упаковка: бутылка 0,33л 24 шт.</p>
-<div class="productItem1Price">2650 руб.</div>
-<a href="#" class="productItem1But">ДОБАВИТЬ В КОРЗИНУ</a>
-</div>
-<div style="clear:both"></div>
-</div>
-
-<div class="productItem1">
-<div class="productItem1Img"><img src="style/img/testPic.jpg"></div>
-<div class="productItem1Cont">
-<h1>Beсk's - Германия</h1>
-<p>Страна производитель: Германия 0% алк: -Упаковка: бутылка 0,33л 24 шт.</p>
-<div class="productItem1Price">2650 руб.</div>
-<a href="#" class="productItem1But">ДОБАВИТЬ В КОРЗИНУ</a>
-</div>
-<div style="clear:both"></div>
-</div>
-
-<div class="productItem1">
-<div class="productItem1Img"><img src="style/img/testPic.jpg"></div>
-<div class="productItem1Cont">
-<h1>Beсk's - Германия</h1>
-<p>Страна производитель: Германия 0% алк: -Упаковка: бутылка 0,33л 24 шт.</p>
-<div class="productItem1Price">2650 руб.</div>
-<a href="#" class="productItem1But">ДОБАВИТЬ В КОРЗИНУ</a>
-</div>
-<div style="clear:both"></div>
-</div>
-
-<div class="productItem1">
-<div class="productItem1Img"><img src="style/img/testPic.jpg"></div>
-<div class="productItem1Cont">
-<h1>Beсk's - Германия</h1>
-<p>Страна производитель: Германия 0% алк: -Упаковка: бутылка 0,33л 24 шт.</p>
-<div class="productItem1Price">2650 руб.</div>
-<a href="#" class="productItem1But">ДОБАВИТЬ В КОРЗИНУ</a>
-</div>
-<div style="clear:both"></div>
-</div>
-
-<div class="productItem1">
-<div class="productItem1Img"><img src="style/img/testPic.jpg"></div>
-<div class="productItem1Cont">
-<h1>Beсk's - Германия</h1>
-<p>Страна производитель: Германия 0% алк: -Упаковка: бутылка 0,33л 24 шт.</p>
-<div class="productItem1Price">2650 руб.</div>
-<a href="#" class="productItem1But">ДОБАВИТЬ В КОРЗИНУ</a>
-</div>
-<div style="clear:both"></div>
-</div>
-
-</div>
+<script src="js/vendor/underscore.min.js" type="text/javascript"></script>
+<script src="js/modules/catalog.js" type="text/javascript"></script>
+<script src="js/modules/cart.js" type="text/javascript"></script>
+<script src="js/modules/main.js" type="text/javascript"></script>
 
 </body>
 </html>

@@ -8,16 +8,21 @@ a { text-decoration: none }
 textarea:focus, input:focus { outline: none; }
 
 .head1 { position: fixed; top: 0; left: 0; right: 0; height: 95px; background: #F4F4F4; z-index: 2 }
+.head1Cart { height: 60px; }
 
 .logo1 { position: absolute; top: 5px; left: 10px; }
 .logo1 img { width: 84px; }
+
+.ArrowBack { position: absolute; top: 0; left: 0; width: 125px; height: 60px }
+.ArrowBack img { position: absolute; left: 20px; top: 0; bottom: 0; margin: auto; width: 40px; }
+.ArrowBack span { position: absolute; right: 5px; top: 20px; font-size: 14px; color: #898989; font-weight: bold; text-decoration: none }
 
 .basketCont { position: absolute; top: 13px; right: 95px; }
 .basketCont img { width: 30px; }
 .basketCont span { position: absolute; top: 5px; left: 35px; font-size: 12px; font-weight: bold; padding: 2px 6px; color: #FFFFFF; background: #2A7D2E; border-radius: 25px; }
 
-.icDopMenu { position: absolute; right: 18px; top: 15px; }
-.icDopMenu img { width: 20px; }
+.icDopMenu { position: absolute; width: 50px; height: 60px; right: 0; top: 0; }
+.icDopMenu img { position: absolute; width: 20px; top: 16px; right: 15px; }
 
 .inputSearch { position: absolute; height: 35px; left: 0; right: 0; bottom: 0; border-top: 1px solid #D9D9D9; border-bottom: 1px solid #D9D9D9; }
 .inputSearch input { position: absolute; width: 100%; box-sizing: border-box; font-size: 14px; color: #969696; height: 35px; padding: 10px 70px 10px 45px; bottom: 0; border: none }
@@ -28,15 +33,26 @@ textarea:focus, input:focus { outline: none; }
 .icFiltr { position: absolute; right: 16px; top: 2px; }
 .icFiltr img { width: 32px; }
 
-.productCont { padding: 100px 0 0 0 }
+.productCont { padding: 100px 5px 0 5px }
+.productContCart { padding: 65px 5px 0 5px }
 
 .productItem1 { position: relative; border-bottom: 1px solid #E1E1E1; padding: 3px 0 }
-.productItem1Img img { float: left; left: 2px; top: 0; width: 60px; margin: 3px 5px 3px 0 }
+.productItem1Img img { float: left; left: 2px; top: 0; width: 60px; margin: 3px 8px 3px 0 }
 .productItem1Cont { position: relative; padding: 8px 10px; }
 .productItem1 h1 { font-size: 14px; color: #2A7D2E; margin: 0 0 2px 0 }
 .productItem1 p { font-size: 12px; color: #837561; }
-.productItem1Price { font-size: 14px; font-weight: bold; color: #837561; }
-.productItem1But { font-weight: bold; font-size: 9px; color: #FFFFFF; padding: 6px 8px; background: #0077BE; border-radius: 5px; }
+.productItem1Price { font-size: 14px; font-weight: bold; color: #837561; margin: 3px 0 0 0 }
+.productItem1But { position: relative; font-weight: bold; font-size: 9px; color: #FFFFFF; padding: 8px 8px; background: #0077BE; border-radius: 5px; border-style: none; cursor: pointer }
+
+.productItem1ButDel { position: absolute; right: 10px; bottom: 10px; background: #E42027; padding-left: 21px; }
+.productItem1ButDel img { position: absolute; width: 17px; left: 2px; top: 4px; }
+
+.countBlock { font-size: 22px; color: #2A7D2E; margin: 5px 0 0 0 }
+.countBlock a { display: inline-block; width: 30px; font-size: 26px; color: #837561; font-weight: 100; text-align: center }
+.countBlockBut { display: inline-block; width: 30px; font-size: 26px; color: #837561; font-weight: 100; text-align: center; cursor: pointer; }
+
+.cartSumLine { position: relative; font-size: 14px; font-weight: bold; color: #000000; padding: 25px 15px; }
+.butOrder { font-size: 12px; position: absolute; top: 16px; right: 10px; }
 
 
 
