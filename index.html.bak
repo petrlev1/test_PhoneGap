@@ -39,15 +39,15 @@
 <div class="productItem1Img"><img class="good-item__img" src="<%- good.img %>" /></div>
 <div class="productItem1Cont">
 <h1><%- good.name %></h1>
-<p><%- good.description %>. <%- good.sales_notes %></p>
-<div class="productItem1Price"><%= good.price %> я─я┐п╠.</div>
+<p><%- good.description %></p>
+<div class="productItem1Price"><%= good.price %> ПСА.</div>
                 <button 
                     class="good-item__btn-add js-add-to-cart productItem1But"
                     data-id="<%= good.id %>"
                     data-name="<%- good.name %>"
                     data-price="<%= good.price %>"
-					data-img="<%= good.img %>"
-                >п■п·п▒п░п▓п≤п╒п╛ п▓ п п·п═п≈п≤п²пё</button>
+					data-img="<%- good.img %>"
+                >днаюбхрэ б йнпгхмс</button>
 </div>
 <div style="clear:both"></div>
 </div>

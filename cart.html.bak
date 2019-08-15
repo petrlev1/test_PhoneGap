@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport">
     <meta charset="utf-8" />
-<title>РљРћР Р—РРќРђ</title>
+<title>Корзина</title>
 <link href="style/general.css" rel="stylesheet">
     <script src="scripts/jquery-3.3.1.min.js"></script>
   <title>Document</title>
@@ -13,7 +13,7 @@
  <body data-page="cart">
  
  <div class="head1 head1Cart">
-<a href="index.html" class="ArrowBack"><img src="style/img/ArrowBack.png"><span>РљРѕСЂР·РёРЅР°</span></a>
+<a href="index.html" class="ArrowBack"><img src="style/img/ArrowBack.png"><span>Корзина</span></a>
 <a href="#" class="icDopMenu"><img src="style/img/icDopMenu.png"></a>
 </div>
         
@@ -21,14 +21,14 @@
             <img src="img/loading.gif" alt="">
          </div>
         
-<div class="cartSumLine">РС‚РѕРіРѕ: <span id="total-cart-summa">0</span> СЂСѓР±. <span id="order" class="productItem1But butOrder">РћР¤РћР РњРРўР¬ Р—РђРљРђР—</span></div>
+<div class="cartSumLine">Итого: <span id="total-cart-summa">0</span> руб. <span id="order" class="productItem1But butOrder">ОФОРМИТЬ ЗАКАЗ</span></div>
 
 
 
 <script id="cart-template" type="text/template">
     <% _.each(goods, function(good) { 
 		
-		console.log(good.img);
+		console.log(good.id);
 		
 		%>
         <div class="js-cart-item productItem1" data-id="<%= good.id %>">
@@ -39,7 +39,7 @@
 			<div class="countBlock">
                 <span
                     class="js-change-count countBlockBut"
-                    title=""
+                    title="Уменьшить на 1"
                     data-id="<%= good.id %>"
                     data-delta="-1"
                 >
@@ -48,7 +48,7 @@
                 <span class="js-count"><%= good.count %></span>
                 <span 
                     class="js-change-count countBlockBut"
-                    title=""
+                    title="Увеличить на 1"
                     data-id="<%= good.id %>"
                     data-delta="1"
                 >
@@ -56,10 +56,10 @@
                 </span>
 				</div>
             
-            <div class="productItem1Price"><span class="js-summa"><%= good.count * good.price %></span> Р СѓР±.</div>
+            <div class="productItem1Price"><span class="js-summa"><%= good.count * good.price %></span> руб.</div>
             
-                <span class="cart-item__btn-remove js-remove-from-cart" title="" data-id="<%= good.id %>">
-                    <span class="productItem1But productItem1ButDel"><img src="style/img/ic_delete_forever.png">РЈР”РђР›РРўР¬</span>
+                <span class="cart-item__btn-remove js-remove-from-cart" title="Удалить из корзины" data-id="<%= good.id %>">
+                    <span class="productItem1But productItem1ButDel"><img src="style/img/ic_delete_forever.png">УДАЛИТЬ</span>
                 </span>
                 </div>
             <div style="clear:both"></div>

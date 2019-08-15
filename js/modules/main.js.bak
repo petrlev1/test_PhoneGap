@@ -10,7 +10,6 @@ var app = (function($) {
             attrId: 'data-id',
             attrName: 'data-name',
             attrPrice: 'data-price',
-			attrImg: 'data-img',
             attrDelta: 'data-delta',
             elCart: '#cart',
             elTotalCartCount: '#total-cart-count',

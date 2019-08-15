@@ -28,6 +28,7 @@ var cart = (function($) {
             attrId: 'data-id',
             attrName: 'data-name',
             attrPrice: 'data-price',
+			attrImg: 'data-img',
             attrDelta: 'data-delta',
             elCart: '#cart',
             elTotalCartCount: '#total-cart-count',
@@ -177,6 +178,7 @@ var cart = (function($) {
                 id: +$this.attr(opts.attrId),
                 name: $this.attr(opts.attrName),
                 price: +$this.attr(opts.attrPrice),
+				img: $this.attr(opts.attrImg),
                 count: 1
             });    
             renderMenuCart();
