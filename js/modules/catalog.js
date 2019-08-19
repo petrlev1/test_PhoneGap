@@ -14,7 +14,7 @@ var catalog = (function($) {
             $goods = $('#goods');
 
 
-		$.getJSON('http://ufk-techno.ru/yml.php', function(data) {
+		$.getJSON('http://test5/yml.php', function(data) {
 
        // $.getJSON('data/goods.json', function(data) {
             $goods.html(template({goods: data}));

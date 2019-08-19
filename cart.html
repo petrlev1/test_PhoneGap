@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport">
     <meta charset="utf-8" />
-<title>КОРЗИНА</title>
+<title>Корзина</title>
 <link href="style/general.css" rel="stylesheet">
     <script src="scripts/jquery-3.3.1.min.js"></script>
   <title>Document</title>
@@ -39,7 +39,7 @@
 			<div class="countBlock">
                 <span
                     class="js-change-count countBlockBut"
-                    title=""
+                    title="Уменьшить на 1"
                     data-id="<%= good.id %>"
                     data-delta="-1"
                 >
@@ -48,7 +48,7 @@
                 <span class="js-count"><%= good.count %></span>
                 <span 
                     class="js-change-count countBlockBut"
-                    title=""
+                    title="Увеличить на 1"
                     data-id="<%= good.id %>"
                     data-delta="1"
                 >
@@ -56,9 +56,9 @@
                 </span>
 				</div>
             
-            <div class="productItem1Price"><span class="js-summa"><%= good.count * good.price %></span> Руб.</div>
+            <div class="productItem1Price"><span class="js-summa"><%= good.count * good.price %></span> руб.</div>
             
-                <span class="cart-item__btn-remove js-remove-from-cart" title="" data-id="<%= good.id %>">
+                <span class="cart-item__btn-remove js-remove-from-cart" title="Удалить из корзины" data-id="<%= good.id %>">
                     <span class="productItem1But productItem1ButDel"><img src="style/img/ic_delete_forever.png">УДАЛИТЬ</span>
                 </span>
                 </div>

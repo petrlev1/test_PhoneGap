@@ -213,7 +213,7 @@ var catalogDB = (function($) {
             catalogData += '&needs_data=' + options.needsData;
         }
         $.ajax({
-            url: 'http://sitescatya.temp.swtest.ru/scripts/catalog.php',
+            url: 'scripts/catalog.php',
             data: catalogData,
             type: 'GET',
             cache: false,

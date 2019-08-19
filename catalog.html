@@ -3,7 +3,6 @@
 <html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="viewport">
     <meta charset="utf-8" />
@@ -15,8 +14,9 @@
 
 <body data-page="catalogDB">
 <div class="head1">
-<a href="index.html" class="logo1"><span>Каталог</span><img src="style/img/logo1.png"></a>
+<a href="catalog.html" class="logo1"><img src="style/img/logo1.png"></a>
 <a rel="nofollow" href="cart.html" class="basketCont"><img src="style/img/icBasket.png"><span id="total-cart-count"></span></a>
+<center><a href="catalog.html" >Каталог</a></center>
 <a href="#" class="icDopMenu"><img src="style/img/icDopMenu.png"></a>
 <div class="inputSearch">
 <input name="" type="text">
@@ -24,7 +24,7 @@
 <a href="#" class="icFiltr"><img src="style/img/icFiltr.png"></a>
 </div>
 </div>
-
+<br><br><br><br>
 
 
    <form id="filters-form" role="form">
@@ -32,12 +32,13 @@
 
                     </div>
 					</form>
-                    
-     <div id="categorys" class="catalogCont"></div>
+    <div id="categorys">
+
+					
+                    </div>
 
     <div id="goods" class="productCont">
         <img src="img/loading.gif" alt="" rel="nofollow">
-       
     </div>
 
 
@@ -95,7 +96,7 @@
 			
 			
 		// console.log(item.id);
-			%><a data-category="<%= item.id %>" class="js-category"><%= item.category %> (<%= item.cc %>)</a> <% }); %>
+			%><button type="button" data-category="<%= item.id %>" class="btn btn-default js-category"><%= item.category %></button> (<%= item.cc %>)<br><% }); %>
     </script>
 
 
