@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
-    id          = "com.phonegap.example"
-    versionCode = "4"
-    version     = "1.0.3" >
+    id          = "ru.mosnapitki_app"
+    versionCode = "1"
+    version     = "1.0.0" >
 
 <!-- versionCode is optional and Android only -->
 
@@ -11,14 +11,14 @@
 
   <access origin="*" />
 
-  <name>PhoneGap приложение</name>
+  <name>МосНапитки</name>
 
   <description>
-      Пример PhoneGap приложения2
+      mosnapitki.ru
   </description>
 
-  <author href="http://ppro.allwebtech.ru" email="levendeevp@gmail.com">
-      Петр Левендеев
+  <author href="https://mosnapitki.ru" email="mosnapitki@gmail.com">
+      mosnapitki.ru
   </author>
   
   <platform name="ios" />
