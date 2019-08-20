@@ -1,12 +1,12 @@
 'use strict';
 
-// Модуль корзины
+// ГЊГ®Г¤ГіГ«Гј ГЄГ®Г°Г§ГЁГ­Г»
 var cart = (function($) {
 
     var cartData,
         opts = {};
 
-    // Инициализация модуля
+    // Г€Г­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї Г¬Г®Г¤ГіГ«Гї
     function init(options) {
         _initOptions(options);
         updateData();
@@ -19,7 +19,7 @@ var cart = (function($) {
         _bindHandlers();
     }
 
-    // Инициализируем настройки
+    // Г€Г­ГЁГ¶ГЁГ Г«ГЁГ§ГЁГ°ГіГҐГ¬ Г­Г Г±ГІГ°Г®Г©ГЄГЁ
     function _initOptions(options) {
         var defaultOptions = {
             renderCartOnInit: true,
@@ -43,7 +43,7 @@ var cart = (function($) {
         opts = _.clone(options);
     }
 
-    // Навешивам события
+    // ГЌГ ГўГҐГёГЁГўГ Г¬ Г±Г®ГЎГ»ГІГЁГї
     function _bindHandlers() {
         _onClickAddBtn();
         _onClickChangeCountInCart();
@@ -54,36 +54,36 @@ var cart = (function($) {
 
 
 
-    // Получаем данные
+    // ГЏГ®Г«ГіГ·Г ГҐГ¬ Г¤Г Г­Г­Г»ГҐ
     function updateData() {
         cartData = JSON.parse(localStorage.getItem('cart')) || [];
         return cartData;
     }
 
-    // Возвращаем данные
+    // Г‚Г®Г§ГўГ°Г Г№Г ГҐГ¬ Г¤Г Г­Г­Г»ГҐ
     function getData() {
         return cartData;
     }
 
-    // Сохраняем данные в localStorage
+    // Г‘Г®ГµГ°Г Г­ГїГҐГ¬ Г¤Г Г­Г­Г»ГҐ Гў localStorage
     function saveData() {
         localStorage.setItem('cart', JSON.stringify(cartData));
         return cartData;
     }
 
-    // Очищаем данные
+    // ГЋГ·ГЁГ№Г ГҐГ¬ Г¤Г Г­Г­Г»ГҐ
     function clearData() {
         cartData = [];
         saveData();
         return cartData;
     }
 
-    // Поиск объекта в коллекции cartData по id
+    // ГЏГ®ГЁГ±ГЄ Г®ГЎГєГҐГЄГІГ  Гў ГЄГ®Г«Г«ГҐГЄГ¶ГЁГЁ cartData ГЇГ® id
     function getById(id) {
         return _.findWhere(cartData, {id: id});
     }
 
-    // Добавление товара в коллекцию
+    // Г„Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ ГІГ®ГўГ Г°Г  Гў ГЄГ®Г«Г«ГҐГЄГ¶ГЁГѕ
     function add(item) {
         var oldItem;
         updateData();
@@ -97,7 +97,7 @@ var cart = (function($) {
         return item;
     }
 
-    // Удаление товара из коллекции
+    // Г“Г¤Г Г«ГҐГ­ГЁГҐ ГІГ®ГўГ Г°Г  ГЁГ§ ГЄГ®Г«Г«ГҐГЄГ¶ГЁГЁ
     function remove(id) {
         updateData();
         cartData = _.reject(cartData, function(item) {
@@ -107,7 +107,7 @@ var cart = (function($) {
         return cartData;
     }
 
-    // Изменение количества товара в коллекции
+    // Г€Г§Г¬ГҐГ­ГҐГ­ГЁГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ  ГІГ®ГўГ Г°Г  Гў ГЄГ®Г«Г«ГҐГЄГ¶ГЁГЁ
     function changeCount(id, delta) {
         var item;
         updateData();
@@ -122,17 +122,17 @@ var cart = (function($) {
         return _.findWhere(cartData, {id: id}) || {};
     }
 
-    // Возвращаем количество товаров (количество видов товаров в корзине)
+    // Г‚Г®Г§ГўГ°Г Г№Г ГҐГ¬ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГІГ®ГўГ Г°Г®Гў (ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГўГЁГ¤Г®Гў ГІГ®ГўГ Г°Г®Гў Гў ГЄГ®Г°Г§ГЁГ­ГҐ)
     function getCount() {
         return _.size(cartData);
     }
 
-    // Возвращаем общее количество товаров 
+    // Г‚Г®Г§ГўГ°Г Г№Г ГҐГ¬ Г®ГЎГ№ГҐГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГІГ®ГўГ Г°Г®Гў 
     function getCountAll() {
         return _.reduce(cartData, function(sum, item) {return sum + item.count}, 0);
     }
 
-    // Возвращаем общую сумму
+    // Г‚Г®Г§ГўГ°Г Г№Г ГҐГ¬ Г®ГЎГ№ГіГѕ Г±ГіГ¬Г¬Гі
     function getSumma() {
         return _.reduce(cartData, function(sum, item) {return sum + item.count * item.price}, 0);
     }
@@ -142,7 +142,7 @@ var cart = (function($) {
 
 
 
-    // Рендерим корзину
+    // ГђГҐГ­Г¤ГҐГ°ГЁГ¬ ГЄГ®Г°Г§ГЁГ­Гі
     function renderCart() {
         var template = _.template($('#cart-template').html()),
             data = {
@@ -152,25 +152,25 @@ var cart = (function($) {
         renderTotalCartSumma();
     }
 
-    // Рендерим количество товаров в меню
+    // ГђГҐГ­Г¤ГҐГ°ГЁГ¬ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГІГ®ГўГ Г°Г®Гў Гў Г¬ГҐГ­Гѕ
     function renderMenuCart() {
         var countAll = getCountAll();
         $(opts.elTotalCartCount).html(countAll !== 0 ? countAll : '');
     }
 
-    // Рендерим общую сумму товаров
+    // ГђГҐГ­Г¤ГҐГ°ГЁГ¬ Г®ГЎГ№ГіГѕ Г±ГіГ¬Г¬Гі ГІГ®ГўГ Г°Г®Гў
     function renderTotalCartSumma() {
         $(opts.elTotalCartSumma).html(getSumma());            
     }
 
 
 
-    // Поиск продукта в корзине по id
+    // ГЏГ®ГЁГ±ГЄ ГЇГ°Г®Г¤ГіГЄГІГ  Гў ГЄГ®Г°Г§ГЁГ­ГҐ ГЇГ® id
     function findCartElemById(id) {
         return $(opts.elCartItem + '[' + opts.attrId + '="'+id+'"]');
     }
 
-    // Добавление в корзину
+    // Г„Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ Гў ГЄГ®Г°Г§ГЁГ­Гі
     function _onClickAddBtn() {
         $('body').on('click', opts.elAddToCart, function(e) {
             var $this = $(this);
@@ -182,11 +182,11 @@ var cart = (function($) {
                 count: 1
             });    
             renderMenuCart();
-           // alert('Товар добавлен в корзину');
+           // alert('Г’Г®ГўГ Г° Г¤Г®ГЎГ ГўГ«ГҐГ­ Гў ГЄГ®Г°Г§ГЁГ­Гі');
         });
     }
 
-    // Меняем количество товаров в корзине
+    // ГЊГҐГ­ГїГҐГ¬ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГІГ®ГўГ Г°Г®Гў Гў ГЄГ®Г°Г§ГЁГ­ГҐ
     function _onClickChangeCountInCart() {
         $('body').on('click', opts.elChangeCount, function(e) {
             var $this = $(this),
@@ -205,10 +205,10 @@ var cart = (function($) {
         });
     }
 
-    // Удаляем товар из корзине
+    // Г“Г¤Г Г«ГїГҐГ¬ ГІГ®ГўГ Г° ГЁГ§ ГЄГ®Г°Г§ГЁГ­ГҐ
     function _onClickRemoveFromCart() {
         $('body').on('click', opts.elRemoveFromCart, function(e) {
-            if(!confirm('Удалить товар из корзины?')) return false;
+            if(!confirm('РЈРґР°Р»РёС‚СЊ С‚РѕРІР°СЂ РёР· РєРѕСЂР·РёРЅС‹?')) return false;
             var $this = $(this),
                 id = +$this.attr(opts.attrId),
                 $cartElem = findCartElemById(id);
@@ -221,7 +221,7 @@ var cart = (function($) {
 
 
 
-    // Экспортируем наружу
+    // ГќГЄГ±ГЇГ®Г°ГІГЁГ°ГіГҐГ¬ Г­Г Г°ГіГ¦Гі
     return {
         init: init,
         update: updateData,

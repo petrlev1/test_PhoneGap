@@ -10,12 +10,12 @@ textarea:focus, input:focus, select:focus { outline: none; }
 .head1 { position: fixed; top: 0; left: 0; right: 0; height: 95px; background: #F4F4F4; z-index: 2 }
 .head1Cart { height: 60px; }
 
-.logo1 { position: absolute; height: 60px; top: 0; left: 0; }
+.logo1 { position: absolute; width: 143px; height: 60px; top: 0; left: 0; }
 .logo1 span { position: absolute; color: #898989; font-size: 14px; font-weight: bold; top: 20px; left: 15px; }
-.logo1 img { width: 67px; margin: 10px 0 0 73px }
+.logo1 img { position: absolute; top: 10px; right: 0; width: 67px; }
 
-.ArrowBack { position: absolute; top: 0; left: 0; width: 125px; height: 60px }
-.ArrowBack img { position: absolute; left: 20px; top: 0; bottom: 0; margin: auto; width: 40px; }
+.ArrowBack { position: absolute; top: 0; left: 0; width: 128px; height: 60px }
+.ArrowBack img { position: absolute; top: 8px; left: 20px; width: 40px; }
 .ArrowBack span { position: absolute; right: 5px; top: 20px; font-size: 14px; color: #898989; font-weight: bold; text-decoration: none }
 
 .basketCont { position: absolute; height: 60px; top: 0; width: 60px; right: 55px; }
@@ -41,7 +41,7 @@ textarea:focus, input:focus, select:focus { outline: none; }
 .productContCart { padding: 65px 5px 0 5px }
 
 #filters-form { position: fixed; width: 100%; top: 90px; left: 0; right: 0; margin: auto; z-index: 2 }
-#filters-form select { width: 100%; padding: 5px 5px; border-top: 1px solid #D9D9D9; border-bottom: 1px solid #D9D9D9; border-left: none; border-right: none }
+#filters-form select { width: 100%; padding: 5px 5px; border-top: 1px solid #D9D9D9; border-bottom: 1px solid #D9D9D9; border-left: none; border-right: none; background-color: #ffffff; }
 
 .productItem1 { position: relative; border-bottom: 1px solid #E1E1E1; padding: 3px 0 }
 .productItem1Img img { float: left; left: 2px; top: 0; width: 60px; margin: 3px 8px 3px 0 }
