@@ -21,9 +21,9 @@ textarea:focus, input:focus, select:focus { outline: none; }
 .ArrowBack img { position: absolute; top: 8px; left: 20px; width: 40px; }
 .ArrowBack span { position: absolute; right: 5px; top: 20px; font-size: 14px; color: #898989; font-weight: bold; text-decoration: none }
 
-.ArrowBack2 { position: absolute; top: 0; left: 0; width: 164px; height: 60px }
-.ArrowBack2 img { position: absolute; top: 8px; left: 20px; width: 40px; }
-.ArrowBack2 span { position: absolute; right: 5px; top: 20px; font-size: 14px; color: #898989; font-weight: bold; text-decoration: none }
+.ArrowBack2 { position: absolute; top: 0; left: 0; width: 170px; height: 60px }
+.ArrowBack2 img { position: absolute; top: 9px; left: 20px; width: 40px; }
+.ArrowBack2 span { position: absolute; left: 68px; top: 20px; font-size: 14px; color: #898989; font-weight: bold; text-decoration: none }
 
 .basketCont { position: absolute; height: 60px; top: 0; width: 60px; right: 55px; }
 .basketCont img { position: absolute; top: 13px; width: 30px; }
