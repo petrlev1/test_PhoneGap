@@ -10,13 +10,20 @@ textarea:focus, input:focus, select:focus { outline: none; }
 .head1 { position: fixed; top: 0; left: 0; right: 0; height: 95px; background: #F4F4F4; z-index: 2 }
 .head1Cart { height: 60px; }
 
-.logo1 { position: absolute; width: 143px; height: 60px; top: 0; left: 0; }
+.logo1 { position: absolute; width: 78px; height: 60px; top: 0; left: 0; }
 .logo1 span { position: absolute; color: #898989; font-size: 14px; font-weight: bold; top: 20px; left: 15px; }
 .logo1 img { position: absolute; top: 10px; right: 0; width: 67px; }
+
+.linkIcon { display: none }
+.linkGeneral { display: block}
 
 .ArrowBack { position: absolute; top: 0; left: 0; width: 128px; height: 60px }
 .ArrowBack img { position: absolute; top: 8px; left: 20px; width: 40px; }
 .ArrowBack span { position: absolute; right: 5px; top: 20px; font-size: 14px; color: #898989; font-weight: bold; text-decoration: none }
+
+.ArrowBack2 { position: absolute; top: 0; left: 0; width: 164px; height: 60px }
+.ArrowBack2 img { position: absolute; top: 8px; left: 20px; width: 40px; }
+.ArrowBack2 span { position: absolute; right: 5px; top: 20px; font-size: 14px; color: #898989; font-weight: bold; text-decoration: none }
 
 .basketCont { position: absolute; height: 60px; top: 0; width: 60px; right: 55px; }
 .basketCont img { position: absolute; top: 13px; width: 30px; }
