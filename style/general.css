@@ -56,7 +56,7 @@ textarea:focus, input:focus, select:focus { outline: none; }
 .productItem1 h1 { font-size: 14px; color: #2A7D2E; margin: 0 0 2px 0 }
 .productItem1 p { font-size: 12px; color: #837561; }
 .productItem1Price { font-size: 14px; font-weight: bold; color: #837561; margin: 3px 0 0 0 }
-.productItem1But { position: relative; font-weight: bold; font-size: 9px; color: #FFFFFF; padding: 8px 8px; margin: 7px 0 0 0; background: #0077BE; border-radius: 5px; border-style: none; cursor: pointer }
+.productItem1But { position: relative; display: inline-block; font-weight: bold; font-size: 9px; color: #FFFFFF; padding: 8px 8px; margin: 7px 0 0 0; background: #0077BE; border-radius: 5px; border-style: none; cursor: pointer }
 
 .productItem1ButDel { position: absolute; right: 10px; bottom: 10px; background: #E42027; padding-left: 21px; }
 .productItem1ButDel img { position: absolute; width: 17px; left: 2px; top: 4px; }

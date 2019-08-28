@@ -1,17 +1,33 @@
 <?php
 
 // Подключаем библиотеку sms.ru
-require_once './lib/sms.ru.php';
+//require_once './lib/sms.ru.php';
+
+header('Access-Control-Allow-Origin: *');
+
+
+
+header("Access-Control-Allow-Methods: POST,GET"); // ,OPTION
+header("Access-Control-Allow-Headers: content-type");
+header("Access-Control-Allow-Headers: NCZ");
+
+
 
 // Объявляем нужные константы
+
+/*
+
+define('DB_HOST', 'localhost');
+define('DB_USER', 'sitescatya');
+define('DB_PASSWORD', 'soprod12');
+define('DB_NAME', 'sitescatya');
+
+*/
+
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASSWORD', 'root');
-define('DB_NAME', 'webdevkin');
-
-define('EMAIL_ADMIN', 'webdevkin@gmail.com');
-define('EMAIL_FROM_NAME', 'Интернет-магазин Webdevkin');
-define('SITE', 'webdevkin.ru');
+define('DB_PASSWORD', 'soprod12');
+define('DB_NAME', 'napitki');
 
 
 // Подключаемся к базе данных

@@ -72,7 +72,7 @@ var catalogDB = (function($) {
 
 		ui.$categorys.on('click','.js-category', _changeCategory);
 
-        ui.$search.on('change', _getData);
+        ui.$search.on('click','.js-search', _getData);
 
         ui.$brands.on('change', 'select', _getData);
         ui.$sort.on('change', _getData);

@@ -23,9 +23,9 @@ define('DB_NAME', 'sitescatya');
 */
 
 define('DB_HOST', 'localhost');
-define('DB_USER', 'timalevma3');
+define('DB_USER', 'root');
 define('DB_PASSWORD', 'soprod12');
-define('DB_NAME', 'timalevma3');
+define('DB_NAME', 'napitki');
 
 // Подключаемся к базе данных
 function connectDB() {
