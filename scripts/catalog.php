@@ -12,12 +12,20 @@ header("Access-Control-Allow-Headers: NCZ");
 
 
 // Объявляем нужные константы
+
+/*
+
 define('DB_HOST', 'localhost');
 define('DB_USER', 'sitescatya');
 define('DB_PASSWORD', 'soprod12');
-//define('DB_NAME', 'iph');
-
 define('DB_NAME', 'sitescatya');
+
+*/
+
+define('DB_HOST', 'localhost');
+define('DB_USER', 'timalevma3');
+define('DB_PASSWORD', 'soprod12');
+define('DB_NAME', 'timalevma3');
 
 // Подключаемся к базе данных
 function connectDB() {
@@ -34,6 +42,38 @@ function connectDB() {
     }
 }
 
+
+function getMinCount($desc,$name)
+{
+	if (!preg_match("|([0-9]+) шт|U",$desc, $matches))
+	{
+		if (!preg_match("|([0-9]+)шт|U",$desc, $matches))
+		{
+			if (!preg_match("|([0-9]+) шт|U",$name, $matches))
+			{
+				preg_match("|([0-9]+)шт|U",$name, $matches);
+				return $matches[1];
+			}
+		    else
+			{
+				return $matches[1];
+			}
+		}
+		else
+		{
+			return $matches[1];
+		}
+	}
+	else
+	{
+			return $matches[1];
+	}
+
+	#print_r($matches);
+	
+	
+}
+
 // Получение данных из массива _GET
 function getOptions() {
     // Категория, цены и дополнительные данные
@@ -45,6 +85,8 @@ function getOptions() {
     // Бренды
     $brands = (isset($_GET['brands'])) ? implode($_GET['brands'], ',') : null;
 
+	 $search = (isset($_GET['search'])) ? trim($_GET['search']) : '';
+
     // Сортировка
     $sort = (isset($_GET['sort'])) ? $_GET['sort'] : 'price_asc';
     $sort = explode('_', $sort);
@@ -53,6 +95,7 @@ function getOptions() {
 
     return array(
         'brands' => $brands,
+		'search' => $search,
         'category_id' => $categoryId,
         'min_price' => $minPrice,
         'max_price' => $maxPrice,
@@ -77,6 +120,13 @@ function getGoods($options, $conn) {
             ? " g.category_id = $categoryId and "
             : '';
 
+
+	$search = $options['search'];
+    $searchWhere =
+        ($search !="")
+            ? " g.good regexp '$search' and "
+            : '';
+
     $brands = $options['brands'];
     $brandsWhere =
         ($brands !== null)
@@ -99,6 +149,7 @@ function getGoods($options, $conn) {
             brands as b
         where
             $categoryWhere
+			$searchWhere
             $brandsWhere
             g.brand_id = b.id and
             (g.price between $minPrice and $maxPrice)
@@ -106,6 +157,8 @@ function getGoods($options, $conn) {
     ";
 
     $data = $conn->query($query);
+
+
     return $data->fetch_all(MYSQLI_ASSOC);
 }
 
@@ -164,6 +217,7 @@ function getCategorys($conn)
 }
 
 
+
 // Получение всех данных
 function getData($options, $conn) {
     $result = array(
@@ -198,10 +252,51 @@ try {
     $data = getData($options, $conn);
 
     // Возвращаем клиенту успешный ответ
+
+	//print_r($data);
+
+
+
+	$array = array();
+
+	foreach ($data['goods'] as $key=>$value)
+	{
+		if (getMinCount($value["description"],$value["good"])) 
+		{
+			$price = $value["price"]*getMinCount($value["description"],$value["good"]); 
+		}
+		else 
+		{
+			$price = $value["price"];
+		}
+
+		$array["goods"][$key]["good_id"] = $value["good_id"];
+		$array["goods"][$key]["good"] = $value["good"];
+		$array["goods"][$key]["description"] = $value["description"];
+		$array["goods"][$key]["sales_notes"] = $value["sales_notes"];
+		$array["goods"][$key]["category_id"] = $value["category_id"];
+		$array["goods"][$key]["brand"] = $value["brand"];
+		$array["goods"][$key]["price"] = $value["price"];
+		$array["goods"][$key]["mprice"] = $price;
+		$array["goods"][$key]["rating"] = $value["rating"];
+		$array["goods"][$key]["photo"] = $value["photo"];
+	//$array["goods"][$key]["search"] = trim($_GET["search"]);
+
+
+
+		//print $key."==".iconv("UTF-8", "WINDOWS-1251",$value["price"]." / ".$value["good_id"]." / (мин цена: ".$price.") / ". //$value["sales_notes"]." / ".getMinCount($value["description"],$value["good"]));
+		//print "<br>";
+	}
+		//print_r($array);
+	
+
     echo json_encode(array(
         'code' => 'success',
-        'data' => $data
+        'data' => $array,
+		'search' =>$_GET['search']
     ));
+
+
 }
 catch (Exception $e) {
     // Возвращаем клиенту ответ с ошибкой

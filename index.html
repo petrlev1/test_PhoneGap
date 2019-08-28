@@ -9,7 +9,6 @@
     <meta charset="utf-8" />
     <link href="style/general.css" rel="stylesheet">
     <script src="scripts/jquery-3.3.1.min.js"></script>
-    <script src="scripts/general.js"></script>
 <title></title>
 </head>
 
@@ -20,19 +19,30 @@
 <a rel="nofollow" href="cart.html" class="basketCont"><img src="style/img/icBasket.png"><span id="total-cart-count"></span></a>
 <a href="#" class="icDopMenu"><img src="style/img/icDopMenu.png"></a>
 <div class="inputSearch">
+
+
 <input name="" type="text">
+
+
+
+
 <a href="#" class="icSearch"><img src="style/img/icSearch.png"></a>
 <a href="#" class="icFiltr"><img src="style/img/icFiltr.png"></a>
 </div>
 </div>
 
+<!--
+<form id="filters-form" role="form">
+<div id="search">
 
-
-   <form id="filters-form" role="form">
+                    </div>
+   
  <div id="brands">
 
                     </div>
 					</form>
+
+					-->
                     
      <div id="categorys" class="catalogCont">
      </div>
@@ -56,12 +66,12 @@
 <div class="productItem1Cont">
 <h1><%- item.good %></h1>
 <p><%- item.description %> <%- item.sales_notes %></p>
-<div class="productItem1Price"><%= item.price %> руб.</div>
+<div class="productItem1Price"><%= item.mprice %> руб.</div>
                 <button 
                     class="good-item__btn-add js-add-to-cart productItem1But"
                     data-id="<%= item.good_id %>"
                     data-name="<%- item.good %>"
-                    data-price="<%= item.price %>"
+                    data-price="<%= item.mprice %>"
 					data-img="<%= item.photo %>"
                 >ДОБАВИТЬ В КОРЗИНУ</button>
 </div>
@@ -69,6 +79,16 @@
 </div>
     <% }); %>
 </script>
+
+
+<script id="search-template" type="text/template">
+
+<input name="search" type="text" value="<%= search %>">
+
+      
+    </script>
+
+
 
     <script id="brands-template" type="text/template">
 

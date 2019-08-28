@@ -12,15 +12,18 @@ var catalogDB = (function($) {
         $categoryBtn: $('.js-category'),
         $brands: $('#brands'),
 		$categorys: $('#categorys'),
+		$search: $('#search'),
         $sort: $('#sort'),
         $goods: $('#goods'),
         $goodsTemplate: $('#goods-template'),
         $brandsTemplate: $('#brands-template'),
+		$searchTemplate: $('#search-template'),
 		$categorysTemplate: $('#categorys-template')
     };
     var selectedCategory = 0,
         goodsTemplate = _.template(ui.$goodsTemplate.html()),
         brandsTemplate = _.template(ui.$brandsTemplate.html()),
+		searchTemplate  = _.template(ui.$searchTemplate.html()),
 		categorysTemplate = _.template(ui.$categorysTemplate.html())
 		
 	;
@@ -54,11 +57,11 @@ var catalogDB = (function($) {
 		if (selectedCategory!=0)
 		{
 			 ui.$goods.show();
-        _getData({needsData: 'brands,categorys,prices'});
+        _getData({needsData: 'brands,categorys,prices,search'});
 		}else
 		{
  ui.$goods.hide();
- _getData_cat({needsData: 'brands,categorys,prices'});
+ _getData_cat({needsData: 'brands,categorys,prices,search'});
 		//ui.$goods.hide();
 		}
     }
@@ -69,7 +72,7 @@ var catalogDB = (function($) {
 
 		ui.$categorys.on('click','.js-category', _changeCategory);
 
-
+        ui.$search.on('change', _getData);
 
         ui.$brands.on('change', 'select', _getData);
         ui.$sort.on('change', _getData);
@@ -120,7 +123,7 @@ var catalogDB = (function($) {
 			 ui.$categorys.hide();
 			console.log('goods');
 
-       _getData({needsData: 'brands,categorys,prices'});
+       _getData({needsData: 'brands,categorys,prices,search'});
 		}else
 		{
  ui.$goods.hide();
@@ -182,6 +185,9 @@ var catalogDB = (function($) {
 
 		//console.log(responce);
         ui.$goods.html(goodsTemplate({goods: responce.data.goods}));
+
+
+		ui.$search.html(searchTemplate({search: responce.search}));
       
 		
 		if (responce.data.brands) {
@@ -206,14 +212,23 @@ var catalogDB = (function($) {
     // Получение данных
     function _getData(options) {
 
-		console.log('brands: ok' +  selectedCategory);
+		//console.log('brands: ok' +  selectedCategory);
 
         var catalogData = 'category=' + selectedCategory + '&' + ui.$form.serialize();
+
+		console.log('brands: ok' +  catalogData);
+
+
         if (options && options.needsData) {
             catalogData += '&needs_data=' + options.needsData;
         }
         $.ajax({
-            url: 'http://sitescatya.temp.swtest.ru/scripts/catalog.php',
+
+			
+
+			// url: 'http://test6/scripts/catalog.php',
+
+            url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
             data: catalogData,
             type: 'GET',
             cache: false,
