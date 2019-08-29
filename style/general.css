@@ -44,7 +44,7 @@ textarea:focus, input:focus, select:focus { outline: none; }
 .catalogCont { padding: 100px 5px 0 5px }
 .catalogCont a, button { display: block; font-size: 14px; font-weight: bold; color: #0077BE; padding: 10px 10px; border-bottom: 1px solid #E1E1E1; cursor: pointer }
 
-.productCont { padding: 125px 5px 0 5px }
+.productCont { padding: 105px 5px 0 5px }
 .productContCart { padding: 65px 5px 0 5px }
 
 #filters-form { position: fixed; width: 100%; top: 90px; left: 0; right: 0; margin: auto; z-index: 2 }
