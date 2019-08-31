@@ -334,9 +334,9 @@ var catalogDB = (function($) {
 
 			
 
-			// url: 'http://test6/scripts/catalog.php',
+			url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
 
-            url: 'http://test6/scripts/catalog.php',
+           // url: 'http://test6/scripts/catalog.php',
             data: catalogData,
             type: 'GET',
             cache: false,
@@ -370,7 +370,7 @@ console.log(responce);
             catalogData += '&needs_data=' + options.needsData;
         }
         $.ajax({
-            url: 'http://test6/scripts/catalog.php',
+            url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
             data: catalogData,
             type: 'GET',
             cache: false,
@@ -404,7 +404,7 @@ console.log(responce);
             catalogData += '&needs_data=' + options.needsData;
         }
         $.ajax({
-            url: 'http://test6/scripts/catalog.php',
+            url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
             data: catalogData,
             type: 'GET',
             cache: false,
