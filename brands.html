@@ -15,26 +15,24 @@
 <body data-page="catalogDB">
 <div class="head1">
 <a href="index.html" class="logo1 linkIcon"><img src="style/img/logo1.png"></a>
-<!--<a href="#" id="gobrands" class="ArrowBack2 linkGeneral"><img src="style/img/ArrowBack.png"><span >Все категории</span></a>-->
-<a href="index.html" id="gobrands" class="ArrowBack2 linkGeneral"><img src="style/img/ArrowBack.png"><span >Все категории</span></a>
+<span id="gobrands">��� ���������</span>
 <a rel="nofollow" href="cart.html" class="basketCont"><img src="style/img/icBasket.png"><span id="total-cart-count"></span></a>
 <a href="#" class="icDopMenu"><img src="style/img/icDopMenu.png"></a>
 <div class="inputSearch">
-<form id="sch" role="form">
-	
-
-<input id="search2" type="text">
 
 
-<a href="#" class="icSearch"><img src="style/img/icSearch.png"  ></a>
-</form>
+<input name="" type="text">
 
+
+<a href="#" class="icSearch"><img src="style/img/icSearch.png"></a>
 <a href="#" class="icFiltr"><img src="style/img/icFiltr.png"></a>
 </div>
 </div>
 
-<!-- Форма поиска -->
+<!-- ����� ������ -->
 
+<br><br><br><br><br><br><br><br><br>
+ <div id="tobrands"></div>
 
 <form id="filters-form" role="form">
 
@@ -47,48 +45,11 @@
 
 					
 					</form>
-			
+				
 
 				
-                    
-     <div id="categorys" class="catalogCont">
-     </div>
-	  <div id="brands" class="catalogCont">
-
-                    </div>
-
-    <div id="goods" class="productCont">
-    <style type="text/css">
-	 .linkIcon { display: block }
-	 .linkGeneral { display: none }
-     </style>
-        <img src="img/loading.gif" alt="" rel="nofollow">
-       
-    </div>
 
 
-
-
-<script id="goods-template" type="text/template">
-    <% _.each(goods, function(item) { %>
-        <div class="productItem1">
-<div class="productItem1Img"><img class="good-item__img" src="<%= item.photo %>" /></div>
-<div class="productItem1Cont">
-<h1><%- item.good %></h1>
-<p><%- item.description %> <%- item.sales_notes %></p>
-<div class="productItem1Price"><%= item.mprice %> руб.</div>
-                <button 
-                    class="good-item__btn-add js-add-to-cart productItem1But"
-                    data-id="<%= item.good_id %>"
-                    data-name="<%- item.good %>"
-                    data-price="<%= item.mprice %>"
-					data-img="<%= item.photo %>"
-                >ДОБАВИТЬ В КОРЗИНУ</button>
-</div>
-<div style="clear:both"></div>
-</div>
-    <% }); %>
-</script>
 
 
 <script id="search-template" type="text/template">
@@ -96,9 +57,10 @@
 <!--<input name="search" type="text" value="<%= search %>">-->
 
 <input name="search" type="text" >
-<INPUT TYPE="button" value="Искать" class="js-search">
+<INPUT TYPE="button" value="������" class="js-search">
       
     </script>
+
 
 
     <script id="brands-template" type="text/template">
@@ -110,7 +72,7 @@
 		 
 		 %>
 
-		 <a data-brand="<%= item.id %>" class="js-brand"><%= item.brand %> (<%= item.bc %>)</a>
+		 <a data-brand="<%= item.id %>" class="js-brand"><%= item.brand %></a><br>
 
   <%
 	

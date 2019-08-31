@@ -5,11 +5,15 @@ var catalogDB = (function($) {
 
     var ui = {
         $form: $('#filters-form'),
+		//$form2: $('#sch'),
         $prices: $('#prices'),
+		$gobrands: $('#gobrands'),
+		//$search2: $('#search2'),
         $pricesLabel: $('#prices-label'),
         $minPrice: $('#min-price'),
         $maxPrice: $('#max-price'),
         $categoryBtn: $('.js-category'),
+		$brandBtn: $('.js-brand'),
         $brands: $('#brands'),
 		$categorys: $('#categorys'),
 		$search: $('#search'),
@@ -21,6 +25,7 @@ var catalogDB = (function($) {
 		$categorysTemplate: $('#categorys-template')
     };
     var selectedCategory = 0,
+		selectedBrand = 0,
         goodsTemplate = _.template(ui.$goodsTemplate.html()),
         brandsTemplate = _.template(ui.$brandsTemplate.html()),
 		searchTemplate  = _.template(ui.$searchTemplate.html()),
@@ -56,8 +61,18 @@ var catalogDB = (function($) {
         _bindHandlers();
 		if (selectedCategory!=0)
 		{
-			 ui.$goods.show();
-        _getData({needsData: 'brands,categorys,prices,search'});
+			if (selectedBrand!=0)
+			{
+				ui.$goods.show();
+				_getData({needsData: 'brands,categorys,prices,search'});
+			}
+			else
+			{ 
+				ui.$goods.hide();
+				_getData_bra({needsData: 'brands,categorys,prices,search'});
+			}
+
+			
 		}else
 		{
  ui.$goods.hide();
@@ -70,11 +85,16 @@ var catalogDB = (function($) {
     function _bindHandlers() {
         ui.$categoryBtn.on('click', _changeCategory);
 
+		ui.$gobrands.on('click', _goBrands);
+
+		//ui.$search2.on('click','.icSearch',console.log('ee'));
+
 		ui.$categorys.on('click','.js-category', _changeCategory);
 
         ui.$search.on('click','.js-search', _getData);
 
-        ui.$brands.on('change', 'select', _getData);
+        ui.$brands.on('click', '.js-brand', _changeBrand);
+
         ui.$sort.on('change', _getData);
     }
 
@@ -83,6 +103,82 @@ var catalogDB = (function($) {
         ui.$brands.find('input').removeAttr('checked');
         ui.$minPrice.val(0);
         ui.$maxPrice.val(1000000);
+    }
+
+	  function _goBrands() {
+
+		  selectedBrand = 0;
+
+		 console.log(selectedCategory + " / "  + selectedBrand);
+
+		  ui.$goods.hide();
+			    ui.$categorys.hide();
+				ui.$brands.show();
+
+				_getData_bra({needsData: 'brands'});
+
+
+
+
+	  }
+
+ // Смена брендов
+
+	   function _changeBrand() {
+
+
+
+        var $this = $(this);
+		 
+		 selectedBrand = $this.attr('data-brand');
+/*
+		 if (selectedCategory==0)
+		 {
+			 ui.$goods.hide();
+			  ui.$categorys.show();
+		 }else
+		{
+
+
+		 ui.$goods.show();
+		 ui.$categorys.hide();
+		}
+*/
+		// console.log("tima brand: " + selectedBrand);
+
+
+        //ui.$brandBtn.removeClass('active');
+
+      //  $this.addClass('active');
+       
+
+	
+
+        _resetFilters();
+
+
+		if (selectedBrand!=0)
+		{
+
+		
+				ui.$goods.show();
+			    ui.$categorys.hide();
+				ui.$brands.hide();
+			    console.log('goods');
+				 _getData({needsData: 'brands,categorys,prices,search'});
+		}
+
+		else
+			{
+				 _getData_bra({needsData: 'brands'});
+
+
+			}
+			
+			
+
+    
+
     }
 
     // Смена категории
@@ -119,11 +215,23 @@ var catalogDB = (function($) {
         _resetFilters();
 		if (selectedCategory!=0)
 		{
- ui.$goods.show();
-			 ui.$categorys.hide();
-			console.log('goods');
 
-       _getData({needsData: 'brands,categorys,prices,search'});
+			if (selectedBrand!=0)
+			{
+				ui.$goods.show();
+			    ui.$categorys.hide();
+			    console.log('goods');
+				 _getData_bra({needsData: 'brands,categorys,prices,search'});
+
+			}else
+			{
+				 _getData_bra({needsData: 'brands'});
+				 ui.$categorys.hide();
+			}
+			
+			
+
+    
 		}else
 		{
  ui.$goods.hide();
@@ -214,7 +322,7 @@ var catalogDB = (function($) {
 
 		//console.log('brands: ok' +  selectedCategory);
 
-        var catalogData = 'category=' + selectedCategory + '&' + ui.$form.serialize();
+        var catalogData = 'category=' + selectedCategory + '&brands%5B%5D=' + selectedBrand + '&'  + ui.$form.serialize();
 
 		console.log('brands: ok' +  catalogData);
 
@@ -228,7 +336,7 @@ var catalogDB = (function($) {
 
 			// url: 'http://test6/scripts/catalog.php',
 
-            url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
+            url: 'http://test6/scripts/catalog.php',
             data: catalogData,
             type: 'GET',
             cache: false,
@@ -257,12 +365,12 @@ console.log(responce);
     }
 
 	 function _getData_cat(options) {
-        var catalogData = 'category=' + selectedCategory + '&' + ui.$form.serialize();
+        var catalogData = ui.$form.serialize();
         if (options && options.needsData) {
             catalogData += '&needs_data=' + options.needsData;
         }
         $.ajax({
-            url: 'http://sitescatya.temp.swtest.ru/scripts/catalog.php',
+            url: 'http://test6/scripts/catalog.php',
             data: catalogData,
             type: 'GET',
             cache: false,
@@ -271,6 +379,40 @@ console.log(responce);
             success: function(responce) {
                 if (responce.code === 'success') {
                     _catalogSuccess_cat(responce);
+                } else {
+                    _catalogError(responce);
+                }
+            }
+        });
+    }
+
+
+
+	 function _catalogSuccess_bra(responce) {
+
+		
+      
+		if (responce.data.brands) {
+            ui.$brands.html(brandsTemplate({brands: responce.data.brands}));
+        }
+     
+    }
+
+	function _getData_bra(options) {
+        var catalogData = 'category=' + selectedCategory + '&'+ ui.$form.serialize();
+        if (options && options.needsData) {
+            catalogData += '&needs_data=' + options.needsData;
+        }
+        $.ajax({
+            url: 'http://test6/scripts/catalog.php',
+            data: catalogData,
+            type: 'GET',
+            cache: false,
+            dataType: 'json',
+            error: _catalogError,
+            success: function(responce) {
+                if (responce.code === 'success') {
+                    _catalogSuccess_bra(responce);
                 } else {
                     _catalogError(responce);
                 }
