@@ -70,5 +70,20 @@ textarea:focus, input:focus, select:focus { outline: none; }
 .cartSumLine { position: relative; font-size: 14px; font-weight: bold; color: #000000; padding: 25px 15px; }
 .butOrder { font-size: 12px; position: absolute; top: 16px; right: 10px; }
 
+.filtersMenu { position: fixed; display: none; top: 95px; right: 0; padding: 5px; text-align: center; z-index: 2; width: 100%; max-width: 380px;
+    background: #FFFFFF;
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+border-radius: 5px; }
+.filtersMenuAct { display: block }
+.filtersMenu table { width: 100% }
+.filtersMenu td { width: 33%; text-align: left; border-bottom: 1px solid #F3F3F3; }
+.filterRow { border-bottom: 1px solid #F3F3F3; }
+.filterItem { position: relative; display: inline-block; font-size: 14px; text-align: left; padding: 5px 2px; margin: 10px 8px; border-bottom: 1px dashed #B0B0B0; cursor: pointer }
+.filterItemPic { }
+.filterItemPic img { position: relative; float: left;  width: 15px; height: 18px; }
+.filterItemAct { background-color: #F0FD5D; border-bottom: none; padding: 5px 10px; }
+.filterCheck1 { display: none }
+.filterCheck1:checked ~ .filterItem { background-color: #F0FD5D; border-bottom: none; padding: 5px 10px; }
+
 
 

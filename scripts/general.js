@@ -1,17 +1,14 @@
-$( ".logo1" ).click(function() {
-	
-	$(".block1").html("Это приложение на PhoneGap");
+//$('.icFiltr').on('click touch', function(){
+	window.onload = function() {
+		$('.icFiltr').on('click touch', function(){
+  //$('.filtersMenu').css("display", "block");
+  $('.filtersMenu').toggleClass("filtersMenuAct");
+  })
+	}
+//});
 
-});
-
-$( ".but1" ).click(function() {
-	
-	$(".block1").html("Событие 1");
-
-});
-
-$( ".but2" ).click(function() {
-	
-	$(".block1").html("Событие 2");
-
+$(document).click(function(event) {
+  if (!$(event.target).closest(".filtersMenu, .icFiltr").length) {
+    $('.filtersMenu').removeClass("filtersMenuAct");
+  }
 });
