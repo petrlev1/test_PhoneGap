@@ -42,7 +42,9 @@ textarea:focus, input:focus, select:focus { outline: none; }
 .icFiltr img { width: 32px; }
 
 .catalogCont { padding: 100px 5px 0 5px }
-.catalogCont a, button { display: block; font-size: 14px; font-weight: bold; color: #0077BE; padding: 10px 10px; border-bottom: 1px solid #E1E1E1; cursor: pointer }
+.catalogCont a, button { display: block; position: relative; font-size: 14px; font-weight: bold; color: #0077BE; padding: 10px 10px; border-bottom: 1px solid #E1E1E1; cursor: pointer }
+.catalogItem1 { padding: 10px 10px 10px 35px !important; }
+.catalogPic { position: absolute; width: 30px; height: 30px; left: 0; top: 3px;  background-position: top; background-size: contain; background-repeat: no-repeat }
 
 .productCont { padding: 105px 5px 0 5px }
 .productContCart { padding: 65px 5px 0 5px }
