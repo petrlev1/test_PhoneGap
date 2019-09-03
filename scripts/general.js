@@ -7,6 +7,7 @@
   })
   
   $('#inputSearch').on('click touch', function(){
+	  alert ("qqq");
   $('.inputSearchDown').addClass("filtersMenuAct");
   })
   

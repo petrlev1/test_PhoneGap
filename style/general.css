@@ -33,7 +33,7 @@ textarea:focus, input:focus, select:focus { outline: none; }
 .icDopMenu img { position: absolute; width: 20px; top: 17px; right: 15px; }
 
 .inputSearch { position: absolute; height: 35px; left: 0; right: 0; bottom: 0; border-top: 1px solid #D9D9D9; border-bottom: 1px solid #D9D9D9; }
-.inputSearch input { position: absolute; width: 100%; box-sizing: border-box; font-size: 14px; color: #969696; height: 35px; padding: 10px 70px 10px 45px; bottom: 0; border: none }
+.inputSearchInput { position: absolute; width: 100%; box-sizing: border-box; font-size: 14px; color: #969696; height: 35px; padding: 10px 70px 10px 45px; bottom: 0; border: none }
 .inputSearchDown { display: none; position: absolute; top: 37px; left: 0; right: 0; padding: 5px;
 background: #FFFFFF;
 box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
@@ -54,8 +54,10 @@ box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
 .productCont { padding: 105px 5px 0 5px }
 .productContCart { padding: 65px 5px 0 5px }
 
+/*
 #filters-form { position: fixed; width: 100%; top: 90px; left: 0; right: 0; margin: auto; z-index: 2 }
 #filters-form select { width: 100%; padding: 5px 5px; border-top: 1px solid #D9D9D9; border-bottom: 1px solid #D9D9D9; border-left: none; border-right: none; background-color: #ffffff; }
+*/
 
 .productItem1 { position: relative; border-bottom: 1px solid #E1E1E1; padding: 3px 0 }
 .productItem1Img img { float: left; left: 2px; top: 0; width: 60px; margin: 3px 8px 3px 0 }

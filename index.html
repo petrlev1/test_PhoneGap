@@ -21,8 +21,15 @@
 <a rel="nofollow" href="cart.html" class="basketCont"><img src="style/img/icBasket.png"><span id="total-cart-count"></span></a>
 <a href="#" class="icDopMenu"><img src="style/img/icDopMenu.png"></a>
 <div class="inputSearch">
-<input id="inputSearch" name="" type="text">
-<div class="inputSearchDown">
+
+ <!--<input id="inputSearch" class="inputSearchInput" name="" type="text">-->
+
+<!-- Форма поиска -->
+ <form id="filters-form" role="form">
+<div id="search"></div>
+</form>
+
+<div class="inputSearchDownOld" style="display:none">
 <a href="#" id="inputSearchBut1" class="productItem1But" style="padding: 10px 20px; font-size: 11px;">ИСКАТЬ</a>
 </div>
 
@@ -30,6 +37,7 @@
 <a href="#" class="icFiltr"><img src="style/img/icFiltr.png"></a>
 
 </div>
+
 </div>
 
 <div class="filtersMenu">
@@ -52,11 +60,6 @@
 </table>
 <div style="text-align:center; padding: 10px;"><a href="#" id="filtersBot" class="productItem1But">ПРИМЕНИТЬ ФИЛЬТРЫ</a></div>
 </div>
-
-<!-- Форма поиска -->
-<form id="filters-form" role="form">
-<div id="search"></div>
-</form>
 			
                     
      <div id="categorys" class="catalogCont">
@@ -101,8 +104,10 @@
 
 <script id="search-template" type="text/template">
 <input name="search" type="text" value="<%= search %>" style="display:none">
-<input name="search" type="text" >
-<INPUT TYPE="button" value="Искать" class="js-search">
+<input name="search" type="text" id="inputSearch" class="inputSearchInput">
+<div class="inputSearchDown" style="display:block">
+<INPUT TYPE="button" value="ИСКАТЬ" class="js-search productItem1But">
+</div>
 </script>
 
 
