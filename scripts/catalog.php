@@ -22,19 +22,19 @@ define('DB_NAME', 'sitescatya');
 
 */
 
-/*
+
 define('DB_HOST', 'localhost');
 define('DB_USER', 'timalevma3');
 define('DB_PASSWORD', 'soprod12');
 define('DB_NAME', 'timalevma3');
-*/
 
 
 
-define('DB_HOST', 'localhost');
+
+/* define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
-define('DB_NAME', 'napitki2');
+define('DB_NAME', 'napitki2'); */
 
 
 // Подключаемся к базе данных

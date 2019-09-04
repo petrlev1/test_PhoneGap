@@ -6,10 +6,7 @@
   $('.filtersMenu').toggleClass("filtersMenuAct");
   })
   
-  $('#inputSearch').on('click touch', function(){
-	  alert ("qqq");
-  $('.inputSearchDown').addClass("filtersMenuAct");
-  })
+
   
   $('#inputSearchBut1').on('click touch', function(){
   $('.inputSearchDown').removeClass("filtersMenuAct");
