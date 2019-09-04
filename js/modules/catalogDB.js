@@ -5,10 +5,8 @@ var catalogDB = (function($) {
 
     var ui = {
         $form: $('#filters-form'),
-		//$form2: $('#sch'),
         $prices: $('#prices'),
 		$gobrands: $('#gobrands'),
-		//$search2: $('#search2'),
         $pricesLabel: $('#prices-label'),
         $minPrice: $('#min-price'),
         $maxPrice: $('#max-price'),
@@ -17,18 +15,19 @@ var catalogDB = (function($) {
         $brands: $('#brands'),
 		$categorys: $('#categorys'),
 		$search: $('#search'),
+		$btn: $('#btn'),
         $sort: $('#sort'),
+		$gaz: $('#gaz'),
+		$steklo: $('#steklo'),
         $goods: $('#goods'),
         $goodsTemplate: $('#goods-template'),
         $brandsTemplate: $('#brands-template'),
-		$searchTemplate: $('#search-template'),
 		$categorysTemplate: $('#categorys-template')
     };
     var selectedCategory = 0,
 		selectedBrand = 0,
         goodsTemplate = _.template(ui.$goodsTemplate.html()),
         brandsTemplate = _.template(ui.$brandsTemplate.html()),
-		searchTemplate  = _.template(ui.$searchTemplate.html()),
 		categorysTemplate = _.template(ui.$categorysTemplate.html())
 		
 	;
@@ -36,7 +35,7 @@ var catalogDB = (function($) {
     // Инициализация модуля
     function init() {
 
-		console.log(selectedCategory);
+		//console.log(ui.$search);
 
 /*
 		if (selectedCategory==0)
@@ -68,6 +67,13 @@ var catalogDB = (function($) {
 			}
 			else
 			{ 
+				/* скрытие
+				ui.$sort.hide();
+			ui.$gaz.hide();
+			ui.$steklo.hide();
+			*/
+
+
 				ui.$goods.hide();
 				_getData_bra({needsData: 'brands,categorys,prices,search'});
 			}
@@ -75,6 +81,13 @@ var catalogDB = (function($) {
 			
 		}else
 		{
+
+			/* скрытие
+			ui.$sort.hide();
+			ui.$gaz.hide();
+			ui.$steklo.hide();
+			*/
+
  ui.$goods.hide();
  _getData_cat({needsData: 'brands,categorys,prices,search'});
 		//ui.$goods.hide();
@@ -87,15 +100,17 @@ var catalogDB = (function($) {
 
 		ui.$gobrands.on('click', _goBrands);
 
-		//ui.$search2.on('click','.icSearch',console.log('ee'));
-
 		ui.$categorys.on('click','.js-category', _changeCategory);
 
-        ui.$search.on('click','.js-search', _getData);
+        ui.$btn.on('click', _getData);
 
         ui.$brands.on('click', '.js-brand', _changeBrand);
 
         ui.$sort.on('change', _getData);
+		
+		ui.$gaz.on('change', _getData);
+
+		ui.$steklo.on('change', _getData);
     }
 
     // Сброс фильтров, только брендов и цен
@@ -104,6 +119,8 @@ var catalogDB = (function($) {
         ui.$minPrice.val(0);
         ui.$maxPrice.val(1000000);
     }
+
+
 
 	  function _goBrands() {
 
@@ -159,6 +176,14 @@ var catalogDB = (function($) {
 
 		if (selectedBrand!=0)
 		{
+
+			/* скрытие
+
+			ui.$sort.show();
+			ui.$gaz.show();
+			ui.$steklo.show();
+
+			*/
 
 		
 				ui.$goods.show();
@@ -218,6 +243,14 @@ var catalogDB = (function($) {
 
 			if (selectedBrand!=0)
 			{
+
+				/* скрытие
+				ui.$sort.show();
+			ui.$gaz.show();
+			ui.$steklo.show();
+			*/
+
+
 				ui.$goods.show();
 			    ui.$categorys.hide();
 			    console.log('goods');
@@ -291,11 +324,8 @@ var catalogDB = (function($) {
     // Успешное получение данных
     function _catalogSuccess(responce) {
 
-		//console.log(responce);
+		console.log(responce);
         ui.$goods.html(goodsTemplate({goods: responce.data.goods}));
-
-
-		ui.$search.html(searchTemplate({search: responce.search}));
       
 		
 		if (responce.data.brands) {
@@ -322,6 +352,12 @@ var catalogDB = (function($) {
 
 		//console.log('brands: ok' +  selectedCategory);
 
+		 ui.$goods.show();
+		 ui.$brands.hide();
+	     ui.$categorys.hide();
+
+
+
         var catalogData = 'category=' + selectedCategory + '&brands%5B%5D=' + selectedBrand + '&'  + ui.$form.serialize();
 
 		console.log('brands: ok' +  catalogData);
@@ -334,9 +370,9 @@ var catalogDB = (function($) {
 
 			
 
-			url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
+			//url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
 
-           // url: 'http://test6/scripts/catalog.php',
+            url: 'http://test6/scripts/catalog.php',
             data: catalogData,
             type: 'GET',
             cache: false,
@@ -370,7 +406,8 @@ console.log(responce);
             catalogData += '&needs_data=' + options.needsData;
         }
         $.ajax({
-            url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
+			url: 'http://test6/scripts/catalog.php',
+           // url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
             data: catalogData,
             type: 'GET',
             cache: false,
@@ -404,7 +441,8 @@ console.log(responce);
             catalogData += '&needs_data=' + options.needsData;
         }
         $.ajax({
-            url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
+			// url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
+            url: 'http://test6/scripts/catalog.php',
             data: catalogData,
             type: 'GET',
             cache: false,

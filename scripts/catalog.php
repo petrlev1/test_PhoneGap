@@ -22,19 +22,20 @@ define('DB_NAME', 'sitescatya');
 
 */
 
+/*
 define('DB_HOST', 'localhost');
 define('DB_USER', 'timalevma3');
 define('DB_PASSWORD', 'soprod12');
 define('DB_NAME', 'timalevma3');
+*/
 
-/*
 
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'napitki2');
-*/
+
 
 // Подключаемся к базе данных
 function connectDB() {
@@ -94,17 +95,25 @@ function getOptions() {
     // Бренды
     $brands = (isset($_GET['brands'])) ? implode($_GET['brands'], ',') : null;
 
-	 $search = (isset($_GET['search'])) ? trim($_GET['search']) : '';
+	$search = (isset($_GET['search'])) ? trim($_GET['search']) : '';
+
+	$gaz = (isset($_GET['gaz'])) ? trim($_GET['gaz']) : '';
+
+	$steklo = (isset($_GET['steklo'])) ? trim($_GET['steklo']) : '';
 
     // Сортировка
-    $sort = (isset($_GET['sort'])) ? $_GET['sort'] : 'price_asc';
+    $sort = (isset($_GET['sort'])) ? $_GET['sort'] : 'good_asc';
     $sort = explode('_', $sort);
-    $sortBy = $sort[0];
+    //$sortBy = "REPLACE('".$sort[0]."','\"','')";
+
+	$sortBy = $sort[0];
     $sortDir = $sort[1];
 
     return array(
         'brands' => $brands,
 		'search' => $search,
+		'gaz' => $gaz,
+		'steklo'=>$steklo,
         'category_id' => $categoryId,
         'min_price' => $minPrice,
         'max_price' => $maxPrice,
@@ -133,7 +142,20 @@ function getGoods($options, $conn) {
 	$search = $options['search'];
     $searchWhere =
         ($search !="")
-            ? " g.good regexp '$search' and "
+            ? " LOWER(g.good) regexp '".mb_strtolower($search,'utf-8')."' and "
+            : '';
+
+
+    $gaz = $options['gaz'];
+    $gazWhere =
+        ($gaz !="")
+            ? " g.good regexp '$gaz' and "
+            : '';
+
+	$steklo = $options['steklo'];
+    $stekloWhere =
+        ($steklo !="")
+            ? " g.good regexp '$steklo' and "
             : '';
 
 
@@ -146,7 +168,13 @@ function getGoods($options, $conn) {
             : '';
 
 
-			if (isset($_GET['search']) && $_GET['search']!="")
+			if (
+				isset($_GET['search']) && $_GET['search']!="" ||
+				isset($_GET['gaz']) && $_GET['gaz']!="" ||
+				isset($_GET['steklo']) && $_GET['steklo']!=""
+			
+			
+			)
 	{
 				 $query = "
         select
@@ -163,9 +191,9 @@ function getGoods($options, $conn) {
             goods as g,
             brands as b
         where
-            g.good regexp '$search' and g.brand_id = b.id  and
+            $searchWhere $gazWhere $stekloWhere g.brand_id = b.id  and
             (g.price between $minPrice and $maxPrice)
-        order by REPLACE(g.good, '\"','')
+         order by $sortBy $sortDir
     ";
 	}else
 	{
@@ -188,7 +216,7 @@ function getGoods($options, $conn) {
             $brandsWhere
             g.brand_id = b.id and
             (g.price between $minPrice and $maxPrice)
-        order by REPLACE(g.good, '\"','')
+         order by $sortBy $sortDir
     ";
 	}
 

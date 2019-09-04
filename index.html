@@ -16,21 +16,65 @@
 
 <div class="head1">
 <a href="index.html" class="logo1 linkIcon"><img src="style/img/logo1.png"></a>
-<!--<a href="#" id="gobrands" class="ArrowBack2 linkGeneral"><img src="style/img/ArrowBack.png"><span >Р’СЃРµ РєР°С‚РµРіРѕСЂРёРё</span></a>-->
-<a href="index.html" id="gobrands" class="ArrowBack2 linkGeneral"><img src="style/img/ArrowBack.png"><span >Р’СЃРµ РєР°С‚РµРіРѕСЂРёРё</span></a>
+<!--<a href="#" id="gobrands" class="ArrowBack2 linkGeneral"><img src="style/img/ArrowBack.png"><span >Все категории</span></a>-->
+<a href="index.html" id="gobrands" class="ArrowBack2 linkGeneral"><img src="style/img/ArrowBack.png"><span >Все категории</span></a>
 <a rel="nofollow" href="cart.html" class="basketCont"><img src="style/img/icBasket.png"><span id="total-cart-count"></span></a>
 <a href="#" class="icDopMenu"><img src="style/img/icDopMenu.png"></a>
 <div class="inputSearch">
 
  <!--<input id="inputSearch" class="inputSearchInput" name="" type="text">-->
 
-<!-- Р¤РѕСЂРјР° РїРѕРёСЃРєР° -->
+<!-- Форма поиска -->
  <form id="filters-form" role="form">
-<div id="search"></div>
-</form>
+<!--<div id="search"></div>-->
+<!--multiple="multiple"-->
+<input name="search" type="text" >
 
+
+                    <select  id="sort" name="sort" class="form-control">
+
+					
+					 <option value="good_asc">По названию, A-Z</option>
+                        <option value="good_desc">По названию, Z-A</option>
+                        <option value="price_asc">По цене, сначала дешевые</option>
+                        <option value="price_desc">По цене, сначала дорогие</option>
+                        <option value="rating_desc">По популярности</option>
+                       
+                    </select>
+
+
+					<select  id="gaz" name="gaz" class="form-control">
+
+					<option value="">Все</option>
+					 <option value="с газом">С газом</option>
+                        <option value="без газа">Без газа</option>
+                      
+                       
+                    </select>
+
+
+					<select  id="steklo" name="steklo" class="form-control">
+
+					<option value="">Все</option>
+					 <option value="стекло">В стелкле</option>
+                        <option value="пластик">В пластике</option>
+                      
+                       
+                    </select>
+
+<input type="button" id="btn" name="btn" class="js-btn" value="Искать" onclick="">
+					
+
+
+</form>
+<!--
+<a href="">По названию, A-Z</a>
+					<a href="">По названию, Z-A</a>
+					<a href="">По цене, сначала дешевые</a>
+					<a href="#" >По цене, сначала дорогие</a>
+-->
 <div class="inputSearchDownOld" style="display:none">
-<a href="#" id="inputSearchBut1" class="productItem1But" style="padding: 10px 20px; font-size: 11px;">РРЎРљРђРўР¬</a>
+<a href="#" id="inputSearchBut1" class="productItem1But" style="padding: 10px 20px; font-size: 11px;">ИСКАТЬ</a>
 </div>
 
 <a href="#" class="icSearch"><img src="style/img/icSearch.png"></a>
@@ -43,22 +87,22 @@
 <div class="filtersMenu">
 <table>
   <tr>
-<td><label><input name="filtersCheck1" type="radio" value="" class="filterCheck1" checked><span class="filterItem">РџРѕ РЅР°Р·РІР°РЅРёСЋ</span></label></td>
-<td><label><input name="filtersCheck1" type="radio" value="" class="filterCheck1"><span class="filterItem filterItemPic"><img src="style/img/filterArrowDown.png" width="36" height="36">РџРѕ С†РµРЅРµ</span></label></td>
-<td><label><input name="filtersCheck1" type="radio" value="" class="filterCheck1"><span class="filterItem filterItemPic"><img src="style/img/filterArrowUp.png" width="36" height="36">РџРѕ С†РµРЅРµ</span></label></td>
+<td><label><input name="filtersCheck1" type="radio" value="" class="filterCheck1" checked><span class="filterItem">По названию</span></label></td>
+<td><label><input name="filtersCheck1" type="radio" value="" class="filterCheck1"><span class="filterItem filterItemPic"><img src="style/img/filterArrowDown.png" width="36" height="36">По цене</span></label></td>
+<td><label><input name="filtersCheck1" type="radio" value="" class="filterCheck1"><span class="filterItem filterItemPic"><img src="style/img/filterArrowUp.png" width="36" height="36">По цене</span></label></td>
   </tr>
   <tr>
-<td><label><input name="filtersCheck2" type="radio" value="" class="filterCheck1" checked><span class="filterItem">Р’СЃРµ</span></label></td>
-<td><label><input name="filtersCheck2" type="radio" value="" class="filterCheck1"><span class="filterItem">РЎ РіР°Р·РѕРј</span></label></td>
-<td><label><input name="filtersCheck2" type="radio" value="" class="filterCheck1"><span class="filterItem">Р‘РµР· РіР°Р·Р°</span></label></td>
+<td><label><input name="filtersCheck2" type="radio" value="" class="filterCheck1" checked><span class="filterItem">Все</span></label></td>
+<td><label><input name="filtersCheck2" type="radio" value="" class="filterCheck1"><span class="filterItem">С газом</span></label></td>
+<td><label><input name="filtersCheck2" type="radio" value="" class="filterCheck1"><span class="filterItem">Без газа</span></label></td>
   </tr>
   <tr>
-<td><label><input name="filtersCheck3" type="radio" value="" class="filterCheck1" checked><span class="filterItem">Р’СЃРµ</span></label></td>
-<td><label><input name="filtersCheck3" type="radio" value="" class="filterCheck1"><span class="filterItem">Р’ СЃС‚РµРєР»Рµ</span></label></td>
-<td><label><input name="filtersCheck3" type="radio" value="" class="filterCheck1"><span class="filterItem">Р’ РїР»Р°СЃС‚РёРєРµ</span></label></td>
+<td><label><input name="filtersCheck3" type="radio" value="" class="filterCheck1" checked><span class="filterItem">Все</span></label></td>
+<td><label><input name="filtersCheck3" type="radio" value="" class="filterCheck1"><span class="filterItem">В стекле</span></label></td>
+<td><label><input name="filtersCheck3" type="radio" value="" class="filterCheck1"><span class="filterItem">В пластике</span></label></td>
   </tr>
 </table>
-<div style="text-align:center; padding: 10px;"><a href="#" id="filtersBot" class="productItem1But">РџР РРњР•РќРРўР¬ Р¤РР›Р¬РўР Р«</a></div>
+<div style="text-align:center; padding: 10px;"><a href="#" id="filtersBot" class="productItem1But">ПРИМЕНИТЬ ФИЛЬТРЫ</a></div>
 </div>
 			
                     
@@ -87,14 +131,14 @@
 <div class="productItem1Cont">
 <h1><%- item.good %></h1>
 <p><%- item.description %> <%- item.sales_notes %></p>
-<div class="productItem1Price"><%= item.mprice %> СЂСѓР±.</div>
+<div class="productItem1Price"><%= item.mprice %> руб.</div>
                 <button 
                     class="good-item__btn-add js-add-to-cart productItem1But"
                     data-id="<%= item.good_id %>"
                     data-name="<%- item.good %>"
                     data-price="<%= item.mprice %>"
 					data-img="<%= item.photo %>"
-                >Р”РћР‘РђР’РРўР¬ Р’ РљРћР Р—РРќРЈ</button>
+                >ДОБАВИТЬ В КОРЗИНУ</button>
 </div>
 <div style="clear:both"></div>
 </div>
@@ -106,7 +150,7 @@
 <input name="search" type="text" value="<%= search %>" style="display:none">
 <input name="search" type="text" id="inputSearch" class="inputSearchInput">
 <div class="inputSearchDown" style="display:block">
-<INPUT TYPE="button" value="РРЎРљРђРўР¬" class="js-search productItem1But">
+<INPUT TYPE="button" value="ИСКАТЬ" class="js-search productItem1But">
 </div>
 </script>
 
