@@ -67,11 +67,12 @@ var catalogDB = (function($) {
 			}
 			else
 			{ 
-				/* скрытие
+				/* скрытие */
 				ui.$sort.hide();
 			ui.$gaz.hide();
 			ui.$steklo.hide();
-			*/
+			
+			
 
 
 				ui.$goods.hide();
@@ -82,11 +83,12 @@ var catalogDB = (function($) {
 		}else
 		{
 
-			/* скрытие
+			/* скрытие */
 			ui.$sort.hide();
 			ui.$gaz.hide();
 			ui.$steklo.hide();
-			*/
+			
+			
 
  ui.$goods.hide();
  _getData_cat({needsData: 'brands,categorys,prices,search'});
@@ -177,13 +179,13 @@ var catalogDB = (function($) {
 		if (selectedBrand!=0)
 		{
 
-			/* скрытие
+			/* скрытие */
 
 			ui.$sort.show();
 			ui.$gaz.show();
 			ui.$steklo.show();
+			
 
-			*/
 
 		
 				ui.$goods.show();
@@ -244,11 +246,11 @@ var catalogDB = (function($) {
 			if (selectedBrand!=0)
 			{
 
-				/* скрытие
+				/* скрытие */
 				ui.$sort.show();
 			ui.$gaz.show();
 			ui.$steklo.show();
-			*/
+			
 
 
 				ui.$goods.show();

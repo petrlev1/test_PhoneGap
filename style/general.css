@@ -43,8 +43,16 @@ box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
 .icSearch { position: absolute; top: 6px; left: 10px }
 .icSearch img { width: 23px; }
 
-.icFiltr { position: absolute; right: 0; top: 0; height: 35px }
+.icFiltr { display: block; position: absolute; right: 0; top: 0; width: 60px; height: 35px; background-image: url("img/icFiltr.png"); background-position: center; background-size: cover; }
 .icFiltr img { height: 35px; }
+.icFiltrAct { background-color: #0077BE; background-image: url("img/icFiltrAct.png"); }
+
+.filtersMenu2 { position: fixed; display: none; top: 94px; left: 0; right: 0; background: #0077BE; }
+.filtersMenu2H1 { font-size: 15px; color: #ffffff; padding: 5px; text-align: center }
+.filtersMenu2Table { display: table; width: 100%; text-align: center }
+.filtersMenu2Table li { display: table-cell; width: 33%; padding: 0 0 5px 0; }
+.filtersMenu2 select { border: none; width: 95%; height: 38px; }
+.filtersMenu2TitleCell { font-size: 11px; color: #FFFFFF; text-align: center; padding: 5px; }
 
 .catalogCont { padding: 100px 5px 0 5px }
 .catalogCont a, button { display: block; position: relative; font-size: 14px; font-weight: bold; color: #0077BE; padding: 10px 10px; border-bottom: 1px solid #E1E1E1; cursor: pointer }
@@ -81,7 +89,8 @@ box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
     background: #FFFFFF;
 box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
 border-radius: 5px; }
-.filtersMenuAct { display: block }
+.filtersMenuAct { display: block !important }
+.display { display: block !important }
 .filtersMenu table { width: 100% }
 .filtersMenu td { width: 33%; text-align: left; border-bottom: 1px solid #F3F3F3; }
 .filterRow { border-bottom: 1px solid #F3F3F3; }

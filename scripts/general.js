@@ -1,14 +1,23 @@
 //$('.icFiltr').on('click touch', function(){
 	window.onload = function() {
 		
-		$('.icFiltr').on('click touch', function(){
+		/* $('.icFiltr').on('click touch', function(){
   //$('.filtersMenu').css("display", "block");
   $('.filtersMenu').toggleClass("filtersMenuAct");
+  }) */
+  
+  $('.icFiltr').on('click touch', function(){
+  //$('.filtersMenu').css("display", "block");
+  $('.filtersMenu2').toggleClass("filtersMenuAct");
+  $(this).toggleClass("icFiltrAct");
+  $('.inputSearchDown').removeClass("filtersMenuAct");
+  })
+
+$('.inputSearchInput').on('click touch', function(){
+  $('.inputSearchDown').addClass("filtersMenuAct");
   })
   
-
-  
-  $('#inputSearchBut1').on('click touch', function(){
+  $('.inputSearchBut1').on('click touch', function(){
   $('.inputSearchDown').removeClass("filtersMenuAct");
   })
   
@@ -16,9 +25,9 @@
   $('.filtersMenu').removeClass("filtersMenuAct");
   })
 
-$('#inputSearchBut1').on('click touch', function(){
+/* $('#inputSearchBut1').on('click touch', function(){
   alert("Поиск работает");
-  })
+  }) */
   
   $('#filtersBot').on('click touch', function(){
   alert("Фильры работают");
@@ -28,8 +37,9 @@ $('#inputSearchBut1').on('click touch', function(){
 //});
 
 $(document).click(function(event) {
-  if (!$(event.target).closest(".filtersMenu, .icFiltr").length) {
-    $('.filtersMenu').removeClass("filtersMenuAct");
+  if (!$(event.target).closest(".filtersMenu2, .icFiltr").length) {
+    $('.icFiltr').removeClass("icFiltrAct");
+	$('.filtersMenu2').removeClass("filtersMenuAct");
   }
 });
 

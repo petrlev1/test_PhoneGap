@@ -28,42 +28,47 @@
  <form id="filters-form" role="form">
 <!--<div id="search"></div>-->
 <!--multiple="multiple"-->
-<input name="search" type="text" >
+<input name="search" type="text" class="inputSearchInput">
+<div class="inputSearchDown">
+  <!--<input type="button" id="btn" name="btn" class="js-btn" value="Искать" onClick="">-->
+  <a href="#" name="btn" id="btn" class="productItem1But inputSearchBut1" style="padding: 10px 20px; font-size: 11px;">ИСКАТЬ</a>
+</div>
+<a href="#" class="icSearch"><img src="style/img/icSearch.png"></a>
+<a href="#" class="icFiltr"></a>
 
+<div class="filtersMenu2">
+<div class="filtersMenu2H1">Фильтры</div>
+<div class="filtersMenu2Table">
+<li>
+<div class="filtersMenu2TitleCell">Название/цена</div>
                     <select  id="sort" name="sort" class="form-control">
-
-					
-					 <option value="good_asc">По названию, A-Z</option>
-                        <option value="good_desc">По названию, Z-A</option>
+					 <option value="good_asc">По названию, А-Я</option>
+                        <option value="good_desc">По названию, Я-Б</option>
                         <option value="price_asc">По цене, сначала дешевые</option>
                         <option value="price_desc">По цене, сначала дорогие</option>
-                        <option value="rating_desc">По популярности</option>
-                       
                     </select>
-
-
+</li>
+<li>
+<div class="filtersMenu2TitleCell">С газом/без газа</div>
 					<select  id="gaz" name="gaz" class="form-control">
-
 					<option value="">Все</option>
 					 <option value="с газом">С газом</option>
                         <option value="без газа">Без газа</option>
-                      
-                       
                     </select>
+          </li>
 
-
+<li>
+<div class="filtersMenu2TitleCell">Стекло/пластик</div>
 					<select  id="steklo" name="steklo" class="form-control">
-
 					<option value="">Все</option>
 					 <option value="стекло">В стелкле</option>
                         <option value="пластик">В пластике</option>
-                      
-                       
+                        
                     </select>
-
-<input type="button" id="btn" name="btn" class="js-btn" value="Искать" onClick="">
-					
-
+          </li>
+                    
+        </div>
+      </div>
 
 </form>
 <!--
@@ -75,9 +80,6 @@
 <div class="inputSearchDownOld" style="display:none">
 <a href="#" id="inputSearchBut1" class="productItem1But" style="padding: 10px 20px; font-size: 11px;">ИСКАТЬ</a>
 </div>
-
-<a href="#" class="icSearch"><img src="style/img/icSearch.png"></a>
-<a href="#" class="icFiltr"><img src="style/img/icFiltr.png"></a>
 
 </div>
 
