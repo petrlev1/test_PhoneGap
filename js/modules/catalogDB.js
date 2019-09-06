@@ -7,6 +7,7 @@ var catalogDB = (function($) {
         $form: $('#filters-form'),
         $prices: $('#prices'),
 		$gobrands: $('#gobrands'),
+		$icFiltr: $('#icFiltr'),
         $pricesLabel: $('#prices-label'),
         $minPrice: $('#min-price'),
         $maxPrice: $('#max-price'),
@@ -87,6 +88,8 @@ var catalogDB = (function($) {
 			ui.$sort.hide();
 			ui.$gaz.hide();
 			ui.$steklo.hide();
+
+			ui.$icFiltr.hide();
 			
 			
 
@@ -184,6 +187,7 @@ var catalogDB = (function($) {
 			ui.$sort.show();
 			ui.$gaz.show();
 			ui.$steklo.show();
+			ui.$icFiltr.show();
 			
 
 
@@ -375,6 +379,9 @@ var catalogDB = (function($) {
 			url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
 
             //url: 'http://test6/scripts/catalog.php',
+
+			//url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+
             data: catalogData,
             type: 'GET',
             cache: false,
@@ -410,6 +417,10 @@ console.log(responce);
         $.ajax({
 			//url: 'http://test6/scripts/catalog.php',
             url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
+
+			//url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+
+			
             data: catalogData,
             type: 'GET',
             cache: false,
@@ -443,8 +454,11 @@ console.log(responce);
             catalogData += '&needs_data=' + options.needsData;
         }
         $.ajax({
-			url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
-            //url: 'http://test6/scripts/catalog.php',
+			 url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
+            // url: 'http://test6/scripts/catalog.php',
+
+			//url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+
             data: catalogData,
             type: 'GET',
             cache: false,

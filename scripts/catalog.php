@@ -1,6 +1,5 @@
 <?php
 
-
 header('Access-Control-Allow-Origin: *');
 
 
@@ -29,13 +28,26 @@ define('DB_PASSWORD', 'soprod12');
 define('DB_NAME', 'timalevma3');
 
 
+/*
+define('DB_HOST', 'localhost');
+define('DB_USER', 'levendeev2_test');
+define('DB_PASSWORD', 'testtesttest');
+define('DB_NAME', 'levendeev2_test');
+*/
 
+/*
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASSWORD', 'soprod12');
+define('DB_NAME', 'napitki');
+*/
 
-/* define('DB_HOST', 'localhost');
+/*
+define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
-define('DB_NAME', 'napitki2'); */
-
+define('DB_NAME', 'napitki2');
+*/
 
 // Подключаемся к базе данных
 function connectDB() {
@@ -102,7 +114,7 @@ function getOptions() {
 	$steklo = (isset($_GET['steklo'])) ? trim($_GET['steklo']) : '';
 
     // Сортировка
-    $sort = (isset($_GET['sort'])) ? $_GET['sort'] : 'good_asc';
+    $sort = (isset($_GET['sort'])) ? $_GET['sort'] : 'goodtech_asc';
     $sort = explode('_', $sort);
     //$sortBy = "REPLACE('".$sort[0]."','\"','')";
 
@@ -142,20 +154,20 @@ function getGoods($options, $conn) {
 	$search = $options['search'];
     $searchWhere =
         ($search !="")
-            ? " LOWER(g.good) regexp '".mb_strtolower($search,'utf-8')."' and "
+            ? " g.goodtech regexp '".mb_strtolower($search,'utf-8')."' and "
             : '';
 
 
     $gaz = $options['gaz'];
     $gazWhere =
         ($gaz !="")
-            ? " g.good regexp '$gaz' and "
+            ? " g.goodtech regexp '$gaz' and "
             : '';
 
 	$steklo = $options['steklo'];
     $stekloWhere =
         ($steklo !="")
-            ? " g.good regexp '$steklo' and "
+            ? " g.goodtech regexp '$steklo' and "
             : '';
 
 
@@ -235,6 +247,7 @@ function getBrands($categoryId, $conn) {
             select
                 distinct b.id as id,
                 b.brand as brand,
+				b.photo as photo,
 				(SELECT COUNT(id) 
                       FROM goods 
                       WHERE brand_id = b.id) bc 
@@ -275,6 +288,7 @@ function getCategorys($conn)
 
  $query =  "SELECT c.id, 
                    c.category, 
+				   c.photo, 
                      (SELECT COUNT(id) 
                       FROM goods 
                       WHERE category_id = c.id) 
@@ -294,6 +308,9 @@ function getData($options, $conn) {
     $result = array(
         'goods' => getGoods($options, $conn)
     );
+
+
+	/*
 
 	$array = array();
 
@@ -323,7 +340,7 @@ function getData($options, $conn) {
 	}
 
 	$result = $array;
-
+*/
 
 
 
