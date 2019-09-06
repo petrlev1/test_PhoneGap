@@ -133,12 +133,12 @@
 <div class="productItem1Cont">
 <h1><%- item.good %></h1>
 <p><%- item.description %> <%- item.sales_notes %></p>
-<div class="productItem1Price"><%= item.mprice %> руб.</div>
+<div class="productItem1Price"><%= item.price %> руб.</div>
                 <button 
                     class="good-item__btn-add js-add-to-cart productItem1But"
                     data-id="<%= item.good_id %>"
                     data-name="<%- item.good %>"
-                    data-price="<%= item.mprice %>"
+                    data-price="<%= item.price %>"
 					data-img="<%= item.photo %>"
                 >ДОБАВИТЬ В КОРЗИНУ</button>
 </div>
