@@ -1,5 +1,6 @@
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+
+<html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -10,24 +11,31 @@
     <script src="scripts/jquery-3.3.1.min.js"></script>
 <title></title>
 </head>
-<body data-page="order">
 
+<body>
 <div class="head1 head1Cart">
-<a href="cart.html" class="ArrowBack" style="width: 203px;"><img src="style/img/ArrowBack.png"><span>Оформление заказа</span></a>
+<a href="#" class="ArrowBack" style="width: 203px;"><img src="style/img/ArrowBack.png"><span>Оформление заказа</span></a>
 <a href="#" class="icDopMenu"><img src="style/img/icDopMenu.png"></a>
 </div>
 
 <div class="orderCont">
 
-    <div class="container-fluid">
+<div class="SmallText">
+В Вашей корзине 2 товара(ов) на общую сумму 1632 рублей. Заполните форму ниже и нажмите кнопку Отправить заказ.
+</div>
 
-        <div id="order-message" class="SmallText" style="margin: 15px 0 15px 0"></div>
-       
-        <form id="order-form" class="form-horizontal" role="form">
+<div class="container-fluid">
+<form id="order-form" class="form-horizontal" role="form">
             <div class="form-group">
                 <label for="input-name" class="col-sm-2 control-label">Ваше имя *</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" id="input-name" name="name" placeholder="Ваше имя">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="input-email" class="col-sm-2 control-label">Email *</label>
+                <div class="col-sm-6">
+                    <input type="email" class="form-control" id="input-email" name="email" placeholder="Email">
                 </div>
             </div>
             <div class="form-group">
@@ -37,13 +45,6 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="input-email" class="col-sm-2 control-label">Email *</label>
-                <div class="col-sm-6">
-                    <input type="email" class="form-control" id="input-email" name="email" placeholder="Email">
-                </div>
-            </div>
-         
-            <!--<div class="form-group">
                 <label class="col-sm-2 control-label">Способ доставки</label>
                 <div class="col-sm-6">
                     <input type="hidden" name="delivery_type" id="delivery-type" value="" />
@@ -61,7 +62,7 @@
                     <br />
                     <div id="alert-delivery" class="alert alert-info"></div>
                 </div>
-            </div> -->
+            </div>
             <div class="form-group">
                 <label for="input-address" class="col-sm-2 control-label">Адрес доставки</label>
                 <div class="col-sm-6">
@@ -89,24 +90,12 @@
                 </div>
             </div>
         </form>
-    </div>
-    </div>
+        
+        </div>
 
-    <script id="order-message-template" type="text/template">
-        <% if (count !== 0) { %>
-            В Вашей корзине <%= count %> товара(ов) на общую сумму <%= summa %> рублей.
-            Заполните форму ниже и нажмите кнопку Отправить заказ.
-        <% } else { %>
-            Ваша корзина пуста. Перед отправкой заказа добавьте в корзину хотя бы один товар.
-        <% } %>
-    </script>
+</div>
 
-    <script src="js/vendor/jquery.min.js" type="text/javascript"></script>
-    <script src="js/vendor/jquery.cookie.js" type="text/javascript"></script>
-    <script src="js/vendor/underscore.min.js" type="text/javascript"></script>
-    <script src="js/modules/cart.js" type="text/javascript"></script>
-    <script src="js/modules/order.js" type="text/javascript"></script>
-    <script src="js/modules/compare.js" type="text/javascript"></script>
-    <script src="js/modules/main.js" type="text/javascript"></script>
+<script src="scripts/general.js"></script>
+
 </body>
 </html>

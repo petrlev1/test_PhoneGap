@@ -61,6 +61,13 @@ box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
 
 .productCont { padding: 105px 5px 0 5px }
 .productContCart { padding: 65px 5px 0 5px }
+.orderCont { padding: 65px 15px 0 15px }
+
+.SmallText { font-size: 15px; color: #837561; }
+
+.orderCont .control-label { font-size: 14px; }
+
+.alert-danger, .alert-success { font-size: 16px; }
 
 /*
 #filters-form { position: fixed; width: 100%; top: 90px; left: 0; right: 0; margin: auto; z-index: 2 }
