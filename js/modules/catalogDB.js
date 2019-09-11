@@ -7,6 +7,7 @@ var catalogDB = (function($) {
         $form: $('#filters-form'),
         $prices: $('#prices'),
 		$gobrands: $('#gobrands'),
+		$gocats: $('#gocats'),
 		$icFiltr: $('#icFiltr'),
         $pricesLabel: $('#prices-label'),
         $minPrice: $('#min-price'),
@@ -35,6 +36,8 @@ var catalogDB = (function($) {
 
     // Инициализация модуля
     function init() {
+
+		 ui.$gocats.hide();
 
 		//console.log(ui.$search);
 
@@ -68,10 +71,12 @@ var catalogDB = (function($) {
 			}
 			else
 			{ 
+				ui.$icFiltr.show();
+
 				/* скрытие */
-				ui.$sort.hide();
-			ui.$gaz.hide();
-			ui.$steklo.hide();
+				ui.$sort.show();
+			ui.$gaz.show();
+			ui.$steklo.show();
 			
 			
 
@@ -129,6 +134,14 @@ var catalogDB = (function($) {
 
 	  function _goBrands() {
 
+		  ui.$gocats.show();
+		  ui.$icFiltr.show();
+		  ui.$sort.show();
+			ui.$gaz.show();
+			ui.$steklo.show();
+
+		  ui.$gobrands.hide();
+
 		  selectedBrand = 0;
 
 		 console.log(selectedCategory + " / "  + selectedBrand);
@@ -148,7 +161,7 @@ var catalogDB = (function($) {
 
 	   function _changeBrand() {
 
-
+ ui.$gocats.hide();
 
         var $this = $(this);
 		 
@@ -233,7 +246,13 @@ var catalogDB = (function($) {
 		 ui.$categorys.hide();
 		}
 */
-		 console.log(selectedCategory);
+		 console.log(ui.$form);
+
+		 ui.$gocats.show();
+		 ui.$icFiltr.show();
+		 ui.$sort.show();
+			ui.$gaz.show();
+			ui.$steklo.show();
 
 
         ui.$categoryBtn.removeClass('active');
@@ -330,7 +349,18 @@ var catalogDB = (function($) {
     // Успешное получение данных
     function _catalogSuccess(responce) {
 
-		console.log(responce);
+		console.log("search: " + responce.search);
+
+		if (responce.search!="")
+		{
+			ui.$gobrands.hide();
+			ui.$gocats.show();
+		}else
+		{
+			ui.$gobrands.show();
+			ui.$gocats.hide();
+		}
+
         ui.$goods.html(goodsTemplate({goods: responce.data.goods}));
       
 		
@@ -362,6 +392,8 @@ var catalogDB = (function($) {
 		 ui.$brands.hide();
 	     ui.$categorys.hide();
 
+		  ui.$gobrands.show();
+
 
 
         var catalogData = 'category=' + selectedCategory + '&brands%5B%5D=' + selectedBrand + '&'  + ui.$form.serialize();
@@ -376,11 +408,11 @@ var catalogDB = (function($) {
 
 			
 
-			url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
+			//url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
 
             //url: 'http://test6/scripts/catalog.php',
 
-			//url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+			url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
 
             data: catalogData,
             type: 'GET',
@@ -410,15 +442,17 @@ console.log(responce);
     }
 
 	 function _getData_cat(options) {
+		
+
         var catalogData = ui.$form.serialize();
         if (options && options.needsData) {
             catalogData += '&needs_data=' + options.needsData;
         }
         $.ajax({
 			//url: 'http://test6/scripts/catalog.php',
-            url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
+            //url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
 
-			//url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+			url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
 
 			
             data: catalogData,
@@ -454,10 +488,10 @@ console.log(responce);
             catalogData += '&needs_data=' + options.needsData;
         }
         $.ajax({
-			 url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
-            // url: 'http://test6/scripts/catalog.php',
+			// url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
+             //url: 'http://test6/scripts/catalog.php',
 
-			//url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+			url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
 
             data: catalogData,
             type: 'GET',

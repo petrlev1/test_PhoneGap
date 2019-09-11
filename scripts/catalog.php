@@ -21,19 +21,19 @@ define('DB_NAME', 'sitescatya');
 
 */
 
+/*
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'timalevma3');
 define('DB_PASSWORD', 'soprod12');
 define('DB_NAME', 'timalevma3');
+*/
 
 
-/*
 define('DB_HOST', 'localhost');
 define('DB_USER', 'levendeev2_test');
 define('DB_PASSWORD', 'testtesttest');
 define('DB_NAME', 'levendeev2_test');
-*/
 
 /*
 define('DB_HOST', 'localhost');
@@ -42,7 +42,9 @@ define('DB_PASSWORD', 'soprod12');
 define('DB_NAME', 'napitki');
 */
 
+
 /*
+
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
@@ -183,11 +185,21 @@ function getGoods($options, $conn) {
 			if (
 				isset($_GET['search']) && $_GET['search']!="" ||
 				isset($_GET['gaz']) && $_GET['gaz']!="" ||
-				isset($_GET['steklo']) && $_GET['steklo']!=""
+				isset($_GET['steklo']) && $_GET['steklo']!="" || 
+				$brands==0
 			
 			
 			)
 	{
+
+		if ($brands==0)
+		{
+			$limit = "LIMIT 0,100";
+		}
+		else
+		{
+			$limit = "";
+		}
 				 $query = "
         select
             g.id as good_id,
@@ -205,7 +217,7 @@ function getGoods($options, $conn) {
         where
             $searchWhere $gazWhere $stekloWhere g.brand_id = b.id  and
             (g.price between $minPrice and $maxPrice)
-         order by $sortBy $sortDir
+         order by $sortBy $sortDir $limit
     ";
 	}else
 	{

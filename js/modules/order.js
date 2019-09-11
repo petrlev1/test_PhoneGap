@@ -97,8 +97,8 @@ var order = (function($) {
     // Валидация формы
     function _validate() {
         var formData = ui.$orderForm.serializeArray(),
-            name = _.find(formData, {name: 'name'}).value,
-            email = _.find(formData, {name: 'email'}).value,
+            name = _.find(formData, {name: 'phone'}).value,
+            email = _.find(formData, {name: 'address'}).value,
             isValid = (name !== '') && (email !== '');
         return isValid;
     }
