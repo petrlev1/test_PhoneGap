@@ -29,12 +29,12 @@ define('DB_PASSWORD', 'soprod12');
 define('DB_NAME', 'timalevma3');
 */
 
-
+/*
 define('DB_HOST', 'localhost');
 define('DB_USER', 'levendeev2_test');
 define('DB_PASSWORD', 'testtesttest');
 define('DB_NAME', 'levendeev2_test');
-
+*/
 /*
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
@@ -43,13 +43,12 @@ define('DB_NAME', 'napitki');
 */
 
 
-/*
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'napitki2');
-*/
+
 
 // Подключаемся к базе данных
 function connectDB() {
@@ -194,7 +193,20 @@ function getGoods($options, $conn) {
 
 		if ($brands==0)
 		{
-			$limit = "LIMIT 0,100";
+			if (
+				(isset($_GET['sort']) && $_GET['sort']!="") && 
+				(!isset($_GET['gaz']) || $_GET['gaz']=="") && 
+				(!isset($_GET['steklo']) || $_GET['steklo']=="")
+			)
+			{
+				$cat_clause = " g.category_id = $categoryId and ";
+				//$limit = "LIMIT 0,100";
+			}
+			else
+			{
+				$cat_clause = "";
+				//$limit = "LIMIT 0,100";
+			}
 		}
 		else
 		{
@@ -215,9 +227,9 @@ function getGoods($options, $conn) {
             goods as g,
             brands as b
         where
-            $searchWhere $gazWhere $stekloWhere g.brand_id = b.id  and
+            $cat_clause $searchWhere $gazWhere $stekloWhere g.brand_id = b.id  and
             (g.price between $minPrice and $maxPrice)
-         order by $sortBy $sortDir $limit
+         order by $sortBy $sortDir
     ";
 	}else
 	{
