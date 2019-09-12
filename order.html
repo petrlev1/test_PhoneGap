@@ -42,7 +42,19 @@
                     <input type="email" class="form-control" id="input-email" name="email" placeholder="Email">
                 </div>
             </div>
-         
+         <input type="hidden" name="delivery_type" id="delivery-type" value="" />
+                    <input type="hidden" name="delivery_summa" id="delivery-summa" value="0" />
+                    <input type="hidden" name="full_summa" id="full-summa" value="0" />
+
+					 <div class="radio" style="display: none;">
+                        <label><input type="radio" name="delivery" class="js-delivery-type" data-type="Самовывоз" data-summa="0" checked>Самовывоз (бесплатно)</label>
+                    </div>
+                    <div class="radio" style="display: none;">
+                        <label><input type="radio" name="delivery" class="js-delivery-type" data-type="В пределах КАД" data-summa="200">В пределах КАД (200 рублей)</label>
+                    </div>
+                    <div class="radio" style="display: none;">
+                        <label><input type="radio" name="delivery" class="js-delivery-type" data-type="Почта России" data-summa="300">Доставка почтой России (300 рублей)</label>
+                    </div>
             <!--<div class="form-group">
                 <label class="col-sm-2 control-label">Способ доставки</label>
                 <div class="col-sm-6">

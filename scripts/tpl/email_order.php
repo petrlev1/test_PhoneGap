@@ -38,11 +38,20 @@
             ?>
         </tbody>
     </table>
+	<!--
     <div style="margin: 20px 0">
         Доставка: <?php echo $data['delivery_type']; ?><br />
         Сумма доставки: <?php echo $data['delivery_summa']; ?> рублей<br />
         Итого с доставкой: <?php echo $data['full_summa']; ?> рублей<br />
     </div>
+	-->
+
+	 <div style="margin: 20px 0">
+       
+        Итого: <?php echo $data['full_summa']; ?> рублей<br />
+    </div>
+	
+
 </div>
 </body>
 </html>

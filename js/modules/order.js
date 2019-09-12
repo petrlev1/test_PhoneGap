@@ -58,7 +58,9 @@ var order = (function($) {
             deliverySumma = freeDelivery.enabled ? 0 : +$item.attr('data-summa'),
             cartSumma = cart.getSumma(),
             fullSumma = deliverySumma + cartSumma,
-            alert =
+            
+		
+		alert =
                 freeDelivery.enabled
                     ? 'Мы дарим Вам бесплатную доставку!'
                     :
