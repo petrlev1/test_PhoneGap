@@ -410,9 +410,9 @@ var catalogDB = (function($) {
 
 			//url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
 
-            url: 'http://test6/scripts/catalog.php',
+            //url: 'http://test6/scripts/catalog.php',
 
-			//url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+			url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
 
             data: catalogData,
             type: 'GET',
@@ -449,10 +449,10 @@ console.log(responce);
             catalogData += '&needs_data=' + options.needsData;
         }
         $.ajax({
-			url: 'http://test6/scripts/catalog.php',
+			//url: 'http://test6/scripts/catalog.php',
             //url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
 
-			//url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+			url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
 
 			
             data: catalogData,
@@ -489,9 +489,9 @@ console.log(responce);
         }
         $.ajax({
 			// url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
-             url: 'http://test6/scripts/catalog.php',
+             //url: 'http://test6/scripts/catalog.php',
 
-			//url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+			url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
 
             data: catalogData,
             type: 'GET',
