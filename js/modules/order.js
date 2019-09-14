@@ -53,13 +53,19 @@ var order = (function($) {
 
     // Меняем способ доставки
     function _changeDelivery() {
-        var $item = ui.$delivery.btn.filter(':checked'),
+        
+		console.log(cart.getSumma());
+
+		var $item = ui.$delivery.btn.filter(':checked'),
             deliveryType = $item.attr('data-type'),
-            deliverySumma = freeDelivery.enabled ? 0 : +$item.attr('data-summa'),
+           deliverySumma = cart.getSumma()>3000 ? 0 : +300,
+		// deliverySumma = freeDelivery.enabled ? 0 : +$item.attr('data-summa'),
             cartSumma = cart.getSumma(),
             fullSumma = deliverySumma + cartSumma,
             
 		
+
+
 		alert =
                 freeDelivery.enabled
                     ? 'Мы дарим Вам бесплатную доставку!'
@@ -98,10 +104,14 @@ var order = (function($) {
 
     // Валидация формы
     function _validate() {
+
+		//console.log(cart.getSumma());
+
         var formData = ui.$orderForm.serializeArray(),
             name = _.find(formData, {name: 'phone'}).value,
             email = _.find(formData, {name: 'address'}).value,
-            isValid = (name !== '') && (email !== '');
+			time = _.find(formData, {name: 'time'}).value,
+            isValid = (name !== '') && (email !== '') && (time !== '');
         return isValid;
     }
 
