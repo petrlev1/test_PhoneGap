@@ -33,8 +33,9 @@ $('.inputSearchInput').on('click touch', function(){
   alert("Фильры работают");
   })
   
-	}
-//});
+}
+
+
 
 $(document).click(function(event) {
   if (!$(event.target).closest(".filtersMenu2, .icFiltr").length) {
@@ -47,5 +48,28 @@ $(document).click(function(event) {
   if (!$(event.target).closest(".inputSearch").length) {
     $('.inputSearchDown').removeClass("filtersMenuAct");
   }
+  
+});
+
+
+
+
+//DopMenu
+window.onload = function() {
+	
+  $('.icDopMenu').on('click touch', function(){
+  $('.DopMenu').show();
+  })
+  
+  $('.DopMenu a').on('click touch', function(){
+  $('.DopMenu').hide();
+  })
+  
+}
+
+$(document).click(function(event) {
+  if (!$(event.target).closest(".icDopMenu").length) {
+    $('.DopMenu').hide();
+  } 
   
 });
