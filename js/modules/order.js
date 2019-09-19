@@ -111,7 +111,7 @@ var order = (function($) {
             name = _.find(formData, {name: 'phone'}).value,
             email = _.find(formData, {name: 'address'}).value,
 			time = _.find(formData, {name: 'time'}).value,
-            isValid = (name !== '') && (email !== '') && (time !== '');
+            isValid = (name !== '') && (email !== '');
         return isValid;
     }
 

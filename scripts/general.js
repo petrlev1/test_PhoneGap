@@ -33,6 +33,17 @@ $('.inputSearchInput').on('click touch', function(){
   alert("Фильры работают");
   })
   
+  
+  //DopMenu
+  $('.icDopMenu').on('click touch', function(){
+  $('.DopMenu').show();
+  })
+  
+  $('.DopMenu a').on('click touch', function(){
+  $('.DopMenu').hide();
+  })
+  
+  
 }
 
 
@@ -54,19 +65,9 @@ $(document).click(function(event) {
 
 
 
-//DopMenu
-window.onload = function() {
-	
-  $('.icDopMenu').on('click touch', function(){
-  $('.DopMenu').show();
-  })
-  
-  $('.DopMenu a').on('click touch', function(){
-  $('.DopMenu').hide();
-  })
-  
-}
 
+
+//DopMenu
 $(document).click(function(event) {
   if (!$(event.target).closest(".icDopMenu").length) {
     $('.DopMenu').hide();
