@@ -10,7 +10,7 @@ a { text-decoration: none }
 textarea:focus, input:focus, select:focus { outline: none; }
 
 .head1 { position: fixed; top: 0; left: 0; right: 0; height: 105px; background: #F4F4F4; z-index: 2 }
-.head1Cart { height: 75px; }
+.head1Cart { height: 70px; }
 
 .logo1 { position: absolute; width: 78px; height: 60px; bottom: 36px; left: 0; }
 .logo1 span { position: absolute; color: #898989; font-size: 14px; font-weight: bold; top: 20px; left: 15px; }
