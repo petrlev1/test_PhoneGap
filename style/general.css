@@ -60,7 +60,7 @@ box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
 .icFiltr img { height: 35px; }
 .icFiltrAct { background-color: #0077BE; background-image: url("img/icFiltrAct.png"); }
 
-.filtersMenu2 { position: fixed; display: none; top: 94px; left: 0; right: 0; background: #0077BE; }
+.filtersMenu2 { position: fixed; display: none; top: 105px; left: 0; right: 0; background: #0077BE; }
 .filtersMenu2H1 { font-size: 15px; color: #ffffff; padding: 5px; text-align: center }
 .filtersMenu2Table { display: table; width: 100%; text-align: center }
 .filtersMenu2Table li { display: table-cell; width: 33%; padding: 0 0 5px 0; }
