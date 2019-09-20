@@ -9,10 +9,10 @@ a { text-decoration: none }
 
 textarea:focus, input:focus, select:focus { outline: none; }
 
-.head1 { position: fixed; top: 0; left: 0; right: 0; height: 95px; background: #F4F4F4; z-index: 2 }
-.head1Cart { height: 60px; }
+.head1 { position: fixed; top: 0; left: 0; right: 0; height: 105px; background: #F4F4F4; z-index: 2 }
+.head1Cart { height: 75px; }
 
-.logo1 { position: absolute; width: 78px; height: 60px; top: 0; left: 0; }
+.logo1 { position: absolute; width: 78px; height: 60px; bottom: 36px; left: 0; }
 .logo1 span { position: absolute; color: #898989; font-size: 14px; font-weight: bold; top: 20px; left: 15px; }
 .logo1 img { position: absolute; top: 10px; right: 0; width: 67px; }
 
@@ -23,21 +23,21 @@ textarea:focus, input:focus, select:focus { outline: none; }
 .ArrowBack img { position: absolute; top: 8px; left: 20px; width: 40px; }
 .ArrowBack span { position: absolute; right: 5px; top: 20px; font-size: 14px; color: #898989; font-weight: bold; text-decoration: none }
 
-.ArrowBack2 { position: absolute; top: 0; left: 0; width: 130px; height: 60px }
+.ArrowBack2 { position: absolute; bottom: 35px; left: 0; width: 130px; height: 60px }
 .ArrowBack2 img { position: absolute; top: 9px; left: 20px; width: 40px; }
 .ArrowBack2 span { position: absolute; left: 68px; top: 20px; font-size: 14px; color: #898989; font-weight: bold; text-decoration: none }
 
-.ArrowBack3 { display: block; position: absolute; top: 0; left: 0; width: 230px; height: 60px }
+.ArrowBack3 { display: block; position: absolute; bottom: 0; left: 0; width: 230px; height: 60px }
 .ArrowBack3 img { position: absolute; top: 8px; left: 20px; width: 40px; }
 .ArrowBack3 span { position: absolute; left: 72px; top: 20px; font-size: 14px; color: #898989; font-weight: bold; text-decoration: none }
 
 .allText { font-size: 14px;}
 
-.basketCont { position: absolute; height: 60px; top: 0; width: 60px; right: 55px; }
+.basketCont { position: absolute; height: 60px; bottom: 35px; width: 60px; right: 55px; }
 .basketCont img { position: absolute; top: 13px; width: 30px; }
 .basketCont span { position: absolute; top: 18px; left: 35px; font-size: 12px; font-weight: bold; padding: 2px 6px; color: #FFFFFF; background: #2A7D2E; border-radius: 25px; }
 
-.icDopMenu { position: absolute; width: 50px; height: 60px; right: 0; top: 0; }
+.icDopMenu { position: absolute; width: 50px; height: 60px; right: 0; top: 10px; }
 .icDopMenu img { position: absolute; width: 20px; top: 17px; right: 15px; }
 
 .DopMenu { position: fixed; display: none; top: 5px; right: 5px; padding: 7px 20px; max-width: 200px; background: #FFFFFF;
@@ -67,14 +67,14 @@ box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
 .filtersMenu2 select { border: none; width: 95%; height: 38px; }
 .filtersMenu2TitleCell { font-size: 11px; color: #FFFFFF; text-align: center; padding: 5px; }
 
-.catalogCont { padding: 100px 5px 0 5px }
+.catalogCont { padding: 110px 5px 0 5px }
 .catalogCont a, button { display: block; position: relative; font-size: 14px; font-weight: bold; color: #0077BE; padding: 10px 10px; border-bottom: 1px solid #E1E1E1; cursor: pointer }
 .catalogItem1 { padding: 10px 10px 10px 35px !important; }
 .catalogPic { position: absolute; width: 30px; height: 30px; left: 0; top: 3px;  background-position: top; background-size: contain; background-repeat: no-repeat }
 
 .productCont { padding: 105px 5px 0 5px }
-.productContCart { padding: 65px 5px 0 5px }
-.orderCont { padding: 65px 15px 0 15px }
+.productContCart { padding: 80px 5px 0 5px }
+.orderCont { padding: 80px 15px 0 15px }
 
 .SmallText { font-size: 15px; color: #837561; }
 
