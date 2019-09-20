@@ -160,7 +160,7 @@ var order = (function($) {
         orderData = formData + '&cart=' + JSON.stringify(cartData);
         ui.$orderBtn.attr('disabled', 'disabled').text('Идет отправка заказа...');
         $.ajax({
-            url: 'http://rieltorov.net/scripts/order.php',
+            url: 'http://u0351947.isp.regruhosting.ru/scripts/order.php',
             data: orderData,
             type: 'POST',
             cache: false,

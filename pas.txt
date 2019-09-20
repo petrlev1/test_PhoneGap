@@ -1,0 +1,4 @@
+https://server156.hosting.reg.ru/phpmyadmin
+
+log: u0351947_timalev
+pas: soprod12

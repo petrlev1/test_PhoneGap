@@ -412,7 +412,9 @@ var catalogDB = (function($) {
 
             //url: 'http://test6/scripts/catalog.php',
 
-			url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+			//url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+
+			url: 'http://u0351947.isp.regruhosting.ru/scripts/catalog.php',
 
             data: catalogData,
             type: 'GET',
@@ -452,7 +454,9 @@ console.log(responce);
 			//url: 'http://test6/scripts/catalog.php',
             //url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
 
-			url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+			// url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+
+			url: 'http://u0351947.isp.regruhosting.ru/scripts/catalog.php',
 
 			
             data: catalogData,
@@ -491,7 +495,9 @@ console.log(responce);
 			// url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
              //url: 'http://test6/scripts/catalog.php',
 
-			url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+			// url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
+
+			url: 'http://u0351947.isp.regruhosting.ru/scripts/catalog.php',
 
             data: catalogData,
             type: 'GET',

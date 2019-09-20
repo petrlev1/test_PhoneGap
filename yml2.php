@@ -20,9 +20,9 @@ $data = simplexml_load_file('mosnapitki.ru.xml');
 
 
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'napitki2');
+define('DB_USER', 'u0351947_timalev');
+define('DB_PASSWORD', 'soprod12');
+define('DB_NAME', 'u0351947_mosnapitki');
 
 // Подключаемся к базе данных
 function connectDB() {
@@ -72,7 +72,7 @@ foreach ($data->shop->categories->category as $category) {
 
 		$sql_q = "INSERT INTO categories (id,category) VALUES ('$category[id]','$category')";
 
-		//if (!$sql_res = mysqli_query($conn,$sql_q)) print "ERR: ".mysqli_error($conn);
+		if (!$sql_res = mysqli_query($conn,$sql_q)) print "ERR: ".mysqli_error($conn);
 
 
 	//echo "\n";
@@ -119,7 +119,7 @@ foreach ($data->shop->categories->category as $category) {
 
 		 $sql_q = "INSERT INTO brands (id, brand, parentid) VALUES ('$category[id]','".trim($category)."','$category[parentId]')";
 
-		//if (!$sql_res = mysqli_query($conn,$sql_q)) print "ERR: ".mysqli_error($conn);
+		 if (!$sql_res = mysqli_query($conn,$sql_q)) print "ERR: ".mysqli_error($conn);
 
 
 	//echo "\n";
@@ -161,7 +161,7 @@ foreach ($data->shop->categories->category as $category) {
 		{
 			 $sql_q6 = "INSERT INTO brands (id, brand, parentid) VALUES ('$category[id]','$category','$category[id]')";
 
-			 // if (!$sql_res6 = mysqli_query($conn,$sql_q6)) print "ERR: ".mysqli_error($conn);
+			  if (!$sql_res6 = mysqli_query($conn,$sql_q6)) print "ERR: ".mysqli_error($conn);
 
 		}
 	
@@ -217,8 +217,8 @@ foreach ($data->shop->offers->offer as $row) {
  
 
 
-	$sql_q3 = "INSERT INTO goods (id,good,good_tech,description,sales_notes,category_id,brand_id,price,oprice,photo) VALUES ('$id','$name','".str_replace("\"","",mb_strtolower($name,'utf-8'))."','".trim($description)."','".trim($sales_notes)."','".get_category($categoryId,$conn)."','$categoryId','$newprice','$price','$picture')";
-  //  if (!$sql_res3 = mysqli_query($conn,$sql_q3)) print "ERR: ".mysqli_error($conn);
+	$sql_q3 = "INSERT INTO goods (id,good,goodtech,description,sales_notes,category_id,brand_id,price,oprice,photo) VALUES ('$id','$name','".str_replace("\"","",mb_strtolower($name,'utf-8'))."','".trim($description)."','".trim($sales_notes)."','".get_category($categoryId,$conn)."','$categoryId','$newprice','$price','$picture')";
+    if (!$sql_res3 = mysqli_query($conn,$sql_q3)) print "ERR: ".mysqli_error($conn);
 
 	//echo "\n";
 
@@ -236,7 +236,7 @@ while ($rows5 = mysqli_fetch_array($sql_q5))
 	{
 		$sql_q6 = "UPDATE brands SET photo='".get_photo($rows5["id"],$conn)."' WHERE id='".$rows5["id"]."'";
 		
-		//if (!$sql_res6 = mysqli_query($conn,$sql_q6)) print "ERR: ".mysqli_error($conn);
+		if (!$sql_res6 = mysqli_query($conn,$sql_q6)) print "ERR: ".mysqli_error($conn);
 		//print "\n";
 	}
 }
@@ -248,7 +248,7 @@ while ($rows7 = mysqli_fetch_array($sql_q7))
 	if (get_photo_cat($rows7["id"],$conn)!="")
 	{
 		$sql_q8 = "UPDATE categories SET photo='".get_photo_cat($rows7["id"],$conn)."' WHERE id='".$rows7["id"]."'";
-		//if (!$sql_res8 = mysqli_query($conn,$sql_q8)) print "ERR: ".mysqli_error($conn);
+		if (!$sql_res8 = mysqli_query($conn,$sql_q8)) print "ERR: ".mysqli_error($conn);
 		//print "\n";
 	}
 }
