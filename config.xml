@@ -23,6 +23,8 @@
   
   <content src="index.html" />
   
+  <preference name="android-targetSdkVersion" value="28" />
+  
   <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
