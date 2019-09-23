@@ -414,7 +414,10 @@ var catalogDB = (function($) {
 
 			//url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
 
-			url: 'http://u0351947.isp.regruhosting.ru/scripts/catalog.php',
+			//url: 'http://u0351947.isp.regruhosting.ru/scripts/catalog.php',
+			
+			url: 'https://allwebtech.ru/work/2019/freelance/10_yml_app/scripts/catalog.php',
+			
 
             data: catalogData,
             type: 'GET',
@@ -456,7 +459,9 @@ console.log(responce);
 
 			// url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
 
-			url: 'http://u0351947.isp.regruhosting.ru/scripts/catalog.php',
+			//url: 'http://u0351947.isp.regruhosting.ru/scripts/catalog.php',
+			
+			url: 'https://allwebtech.ru/work/2019/freelance/10_yml_app/scripts/catalog.php',
 
 			
             data: catalogData,
@@ -497,7 +502,9 @@ console.log(responce);
 
 			// url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
 
-			url: 'http://u0351947.isp.regruhosting.ru/scripts/catalog.php',
+			//url: 'http://u0351947.isp.regruhosting.ru/scripts/catalog.php',
+			
+			url: 'https://allwebtech.ru/work/2019/freelance/10_yml_app/scripts/catalog.php',
 
             data: catalogData,
             type: 'GET',
