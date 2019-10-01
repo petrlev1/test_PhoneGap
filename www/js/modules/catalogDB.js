@@ -6,6 +6,7 @@ var catalogDB = (function($) {
     var ui = {
         $form: $('#filters-form'),
         $prices: $('#prices'),
+		$logo: $('#logo'),
 		$gobrands: $('#gobrands'),
 		$gocats: $('#gocats'),
 		$icFiltr: $('#icFiltr'),
@@ -64,6 +65,8 @@ var catalogDB = (function($) {
         _bindHandlers();
 		if (selectedCategory!=0)
 		{
+			ui.$logo.hide();
+
 			if (selectedBrand!=0)
 			{
 				ui.$goods.show();
@@ -71,6 +74,7 @@ var catalogDB = (function($) {
 			}
 			else
 			{ 
+			//		ui.$gobrands.hide();
 				ui.$icFiltr.show();
 
 				/* скрытие */
@@ -88,6 +92,10 @@ var catalogDB = (function($) {
 			
 		}else
 		{
+		
+
+
+			ui.$gobrands.hide();
 
 			/* скрытие */
 			ui.$sort.hide();
@@ -265,6 +273,8 @@ var catalogDB = (function($) {
         _resetFilters();
 		if (selectedCategory!=0)
 		{
+			ui.$logo.hide();
+
 
 			if (selectedBrand!=0)
 			{
@@ -273,6 +283,8 @@ var catalogDB = (function($) {
 				ui.$sort.show();
 			ui.$gaz.show();
 			ui.$steklo.show();
+
+			ui.$logo.hide();
 			
 
 
@@ -292,6 +304,8 @@ var catalogDB = (function($) {
     
 		}else
 		{
+			
+
  ui.$goods.hide();
 			console.log('cat');
 			   _getData_cat({needsData: 'categorys'});
@@ -349,16 +363,21 @@ var catalogDB = (function($) {
     // Успешное получение данных
     function _catalogSuccess(responce) {
 
+
+		ui.$logo.hide();
+
 		console.log("search: " + responce.search);
 
 		if (responce.search!="")
 		{
 			ui.$gobrands.hide();
 			ui.$gocats.show();
+			ui.$logo.hide();
 		}else
 		{
 			ui.$gobrands.show();
 			ui.$gocats.hide();
+		
 		}
 
         ui.$goods.html(goodsTemplate({goods: responce.data.goods}));
@@ -391,8 +410,8 @@ var catalogDB = (function($) {
 		 ui.$goods.show();
 		 ui.$brands.hide();
 	     ui.$categorys.hide();
-
-		  ui.$gobrands.show();
+		 ui.$logo.hide();
+		 ui.$gobrands.show();
 
 
 
