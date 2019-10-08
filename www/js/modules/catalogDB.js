@@ -425,17 +425,8 @@ var catalogDB = (function($) {
         }
         $.ajax({
 
-			
-
-			//url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
-
-            //url: 'http://test6/scripts/catalog.php',
-
-			//url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
 
 			url: 'https://mosnap.mos-cc.ru/scripts/catalog.php',
-			
-			//url: 'https://allwebtech.ru/work/2019/freelance/10_yml_app/scripts/catalog.php',
 			
 
             data: catalogData,
@@ -473,14 +464,8 @@ console.log(responce);
             catalogData += '&needs_data=' + options.needsData;
         }
         $.ajax({
-			//url: 'http://test6/scripts/catalog.php',
-            //url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
-
-			// url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
-
-			//url: 'http://u0351947.isp.regruhosting.ru/scripts/catalog.php',
 			
-			url: 'https://allwebtech.ru/work/2019/freelance/10_yml_app/scripts/catalog.php',
+			url: 'https://mosnap.mos-cc.ru/scripts/catalog.php',
 
 			
             data: catalogData,
@@ -516,14 +501,9 @@ console.log(responce);
             catalogData += '&needs_data=' + options.needsData;
         }
         $.ajax({
-			// url: 'http://mosnapitki.ru.swtest.ru/scripts/catalog.php',
-             //url: 'http://test6/scripts/catalog.php',
-
-			// url: 'http://petrlev.pro.swtest.ru/scripts/catalog.php',
 
 			url: 'https://mosnap.mos-cc.ru/scripts/catalog.php',
-			
-			//url: 'https://allwebtech.ru/work/2019/freelance/10_yml_app/scripts/catalog.php',
+
 
             data: catalogData,
             type: 'GET',
