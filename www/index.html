@@ -14,18 +14,6 @@
 
 <body data-page="catalogDB">
 
-<div style="margin-top: 150px;"><img src="style/img/icBasket.png"></div>
-<div><img src="http://levendeev2.temp.swtest.ru/2019/freelance/10_yml_app/style/img/icDopMenu.png"></div>
-<div><img src="https://allwebtech.ru/work/2019/freelance/10_yml_app/icon.png"></div>
-<div><img style="width: 150px" src="https://mosnapitki.ru/images/Mosnapitki/Milky_Way/bounty_hot_chocolate_100g.jpg"></div>
-<div><img style="width: 100px" src="https://mosnapitki.ru/images/Mosnapitki/Acqua_Morelli/aqua-morelli-0_25-bezgaza-steklo.jpg"></div>
-<div>jpg<br>
-<img style="width: 150px" src="style/img/testp.jpg"></div>
-<div><br>
-  webp
-  <br>
-<img style="width: 150px" src="style/img/testp.webp"></div>
-
 <div class="DopMenu">
 <a href="about.html">О компании</a>
 <a href="contacts.html">Контакты</a>
@@ -148,7 +136,7 @@
 <script id="goods-template" type="text/template">
     <% _.each(goods, function(item) { %>
         <div class="productItem1">
-<div class="productItem1Img"><img class="good-item__img" src="<%= item.photo %>" /></div>
+<div class="productItem1Img"><img class="good-item__img" src="https://mosnap.mos-cc.ru/scripts/pic.php?number=<%= item.photo %>" /></div>
 <div class="productItem1Cont">
 <h1><%- item.good %></h1>
 <p><%- item.description %> <%- item.sales_notes %></p>
@@ -185,7 +173,7 @@
 		 
 		 %>
 
-		 <a data-brand="<%= item.id %>" class="js-brand catalogItem1"><span class="catalogPic" style="background-image: url(<%= item.photo %>)"></span><%= item.brand %> (<%= item.bc %>)</a>
+		 <a data-brand="<%= item.id %>" class="js-brand catalogItem1"><span class="catalogPic" style="background-image: url(https://mosnap.mos-cc.ru/scripts/pic.php?number=<%= item.photo %>)"></span><%= item.brand %> (<%= item.bc %>)</a>
 
   <%
 	
@@ -227,7 +215,7 @@
 			
 			
 		// console.log(item.id);
-			%><a data-category="<%= item.id %>" class="js-category catalogItem1"><span class="catalogPic" style="background-image: url(<%= item.photo %>)"></span><%= item.category %> (<%= item.cc %>)</a> <% } }); %>
+			%><a data-category="<%= item.id %>" class="js-category catalogItem1"><span class="catalogPic" style="background-image: url(https://mosnap.mos-cc.ru/scripts/pic.php?number=<%= item.photo %>)"></span><%= item.category %> (<%= item.cc %>)</a> <% } }); %>
     </script>
 
 
