@@ -44,6 +44,15 @@ $('.inputSearchInput').on('click touch', function(){
   })
   
   
+  
+  //Активация кнопки Назад - таймер
+  setTimeout(
+  function() 
+  {
+    $('.ArrowBack2').css("pointer-events","auto");
+  }, 3000);
+  
+  
 }
 
 
@@ -74,3 +83,5 @@ $(document).click(function(event) {
   } 
   
 });
+	
+
