@@ -136,7 +136,7 @@
 <script id="goods-template" type="text/template">
     <% _.each(goods, function(item) { %>
         <div class="productItem1">
-<div class="productItem1Img"><img class="good-item__img" src="https://mosnap.mos-cc.ru/scripts/pic.php?number=<%= item.photo %>" /></div>
+<div class="productItem1Img"><img class="good-item__img" src="<%= item.photo %>" /></div>
 <div class="productItem1Cont">
 <h1><%- item.good %></h1>
 <p><%- item.description %> <%- item.sales_notes %></p>
@@ -173,7 +173,7 @@
 		 
 		 %>
 
-		 <a data-brand="<%= item.id %>" class="js-brand catalogItem1"><span class="catalogPic" style="background-image: url(https://mosnap.mos-cc.ru/scripts/pic.php?number=<%= item.photo %>)"></span><%= item.brand %> (<%= item.bc %>)</a>
+		 <a data-brand="<%= item.id %>" class="js-brand catalogItem1"><span class="catalogPic" style="background-image: url(<%= item.photo %>)"></span><%= item.brand %> (<%= item.bc %>)</a>
 
   <%
 	
@@ -215,7 +215,7 @@
 			
 			
 		// console.log(item.id);
-			%><a data-category="<%= item.id %>" class="js-category catalogItem1"><span class="catalogPic" style="background-image: url(https://mosnap.mos-cc.ru/scripts/pic.php?number=<%= item.photo %>)"></span><%= item.category %> (<%= item.cc %>)</a> <% } }); %>
+			%><a data-category="<%= item.id %>" class="js-category catalogItem1"><span class="catalogPic" style="background-image: url(<%= item.photo %>)"></span><%= item.category %> (<%= item.cc %>)</a> <% } }); %>
     </script>
 
 
