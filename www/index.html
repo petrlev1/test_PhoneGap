@@ -136,7 +136,8 @@
 <script id="goods-template" type="text/template">
     <% _.each(goods, function(item) { %>
         <div class="productItem1">
-<div class="productItem1Img"><img class="good-item__img" src="<%= item.photo %>" /></div>
+<div class="productItem1Img"><img class="good-item__img" src="<%= item.photo %>" />
+</div>
 <div class="productItem1Cont">
 <h1><%- item.good %></h1>
 <p><%- item.description %> <%- item.sales_notes %></p>

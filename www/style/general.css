@@ -85,12 +85,21 @@ box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
 */
 
 .productItem1 { position: relative; border-bottom: 1px solid #E1E1E1; padding: 3px 0 }
-.productItem1Img img { float: left; left: 2px; top: 0; width: 60px; margin: 3px 8px 3px 0 }
+.productItem1Img { float: left; width: 60px; margin: 3px 8px 3px 0 }
+.productItem1Img img { left: 2px; top: 0; width: 100%; }
 .productItem1Cont { position: relative; padding: 8px 10px; }
 .productItem1 h1 { font-size: 14px; color: #2A7D2E; margin: 0 0 2px 0 }
 .productItem1 p { font-size: 12px; color: #837561; }
 .productItem1Price { font-size: 14px; font-weight: bold; color: #837561; margin: 3px 0 0 0 }
 .productItem1But { position: relative; display: inline-block; font-weight: bold; font-size: 9px; color: #FFFFFF; padding: 8px 8px; margin: 7px 0 0 0; background: #0077BE; border-radius: 5px; border-style: none; cursor: pointer }
+
+.productItem1ImgOpen { position: fixed; width: auto; top: 0; bottom: 0; right: 0; left: 0; background-color: rgba(255,255,255,.95); text-align: center; vertical-align: middle; overflow: hidden; margin: 0; z-index: 99 }
+.productItem1ImgOpen img { position: fixed; width: 100%; height: auto; left: 0; right: 0; top: 0; bottom: 0; margin: auto }
+.productItem1ImgOpen:after {
+    content: "";
+    display: block; position: absolute; width: 100px; height: 100px; top: 0; right: 0; background-image: url(img/icClousePic.svg); background-size: contain; background-repeat: no-repeat;
+}
+.icClousePic { display: block; position: absolute; width: 100px; height: 100px; top: 0; right: 0; background-image: url(img/icClousePic.svg); background-size: contain; background-repeat: no-repeat }
 
 .productItem1ButDel { position: absolute; right: 10px; bottom: 10px; background: #E42027; padding-left: 21px; }
 .productItem1ButDel img { position: absolute; width: 17px; left: 2px; top: 4px; }
