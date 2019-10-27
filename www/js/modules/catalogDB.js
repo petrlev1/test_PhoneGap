@@ -38,7 +38,7 @@ var catalogDB = (function($) {
     // Инициализация модуля
     function init() {
 
-		 ui.$gocats.hide();
+		ui.$gocats.hide();
 
 		//console.log(ui.$search);
 
@@ -142,7 +142,7 @@ var catalogDB = (function($) {
 
 	  function _goBrands() {
 
-		  ui.$gocats.show();
+		  // <->  ui.$gocats.show();
 		  ui.$icFiltr.show();
 		  ui.$sort.show();
 			ui.$gaz.show();
@@ -256,7 +256,7 @@ var catalogDB = (function($) {
 */
 		 console.log(ui.$form);
 
-		 ui.$gocats.show();
+	 // <-> 	 ui.$gocats.show();
 		 ui.$icFiltr.show();
 		 ui.$sort.show();
 			ui.$gaz.show();
@@ -371,7 +371,7 @@ var catalogDB = (function($) {
 		if (responce.search!="")
 		{
 			ui.$gobrands.hide();
-			ui.$gocats.show();
+			 // <-> ui.$gocats.show();
 			ui.$logo.hide();
 		}else
 		{
@@ -491,6 +491,13 @@ console.log(responce);
       
 		if (responce.data.brands) {
             ui.$brands.html(brandsTemplate({brands: responce.data.brands}));
+
+            console.log(responce.data.brands.length); // <-->
+
+			if (responce.data.brands.length>0)
+			{
+				ui.$gocats.show();
+			}
         }
      
     }
