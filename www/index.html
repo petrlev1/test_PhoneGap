@@ -168,18 +168,65 @@
     <script id="brands-template" type="text/template">
 
 
-	 <% _.each(brands, function(item) 
+	 <%
+
+	  var timerStart = Date.now();
+
+	   //console.log("Time now: ",Date.now());
+	 
+	var m = [];
+	var counter = 0;
+
+
+	 _.each(brands, function(item) 
 	 
 	 {
-		 
+		
 		 %>
 
 		 <a data-brand="<%= item.id %>" class="js-brand catalogItem1"><span class="catalogPic" style="background-image: url(<%= item.photo %>)"></span><%= item.brand %> (<%= item.bc %>)</a>
 
   <%
+
+
+
+$('<img/>').attr('src', item.photo).on('load', function() {
+
+	counter++;
+   $(this).remove(); // prevent memory leaks as @benweet suggested
+
+   var millis = Date.now()-timerStart;
+
+   var seconds = (millis / 1000).toFixed(3);
+
+
+   //console.log("Time until everything loaded: ",Date.now()-timerStart);
+   // console.log("Seconds: ",counter);
+
+
+	// brands.addEventListener( 'load', incrementCounter, false );
+
+   
+if (counter===brands.length)
+{
+	 console.log('tester5:' ,'all ready!');
+
+	 $('.ArrowBack2').css("pointer-events","auto");
+}
+ 
+  
+  // $('body').css('background-image', 'url(http://picture.de/image.png)');
+});
+
+// console.log('tester3:' + m.length);
 	
-	
-	}); %>
+	});
+
+
+
+
+
+%>
 
 
 

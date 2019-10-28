@@ -20,7 +20,7 @@ textarea:focus, input:focus, select:focus { outline: none; }
 .ArrowBack img { position: absolute; top: 8px; left: 20px; width: 40px; }
 .ArrowBack span { position: absolute; right: 5px; top: 20px; font-size: 14px; color: #898989; font-weight: bold; text-decoration: none }
 
-.ArrowBack2 { position: absolute; bottom: 35px; left: 0; width: 130px; height: 60px;  }
+.ArrowBack2 { position: absolute; bottom: 35px; left: 0; width: 130px; height: 60px; pointer-events: none }
 .ArrowBack2 img { position: absolute; top: 9px; left: 20px; width: 40px; }
 .ArrowBack2 span { position: absolute; left: 68px; top: 20px; font-size: 14px; color: #898989; font-weight: bold; text-decoration: none }
 
