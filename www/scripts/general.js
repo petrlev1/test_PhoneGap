@@ -45,6 +45,13 @@ $('.inputSearchInput').on('click touch', function(){
   
   
   
+  //Открытие/закрытие картинки
+  $('.productItem1ImgOpen').on('click touch', function(){
+  $(this).removeClass("productItem1ImgOpen");
+  })
+  
+  
+  
   //Активация кнопки Назад - таймер
 
   /*
