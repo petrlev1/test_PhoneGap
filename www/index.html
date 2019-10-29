@@ -134,10 +134,44 @@
 
 
 <script id="goods-template" type="text/template">
-    <% _.each(goods, function(item) { %>
-        <div class="productItem1">
-<div class="productItem1Img"><img class="good-item__img" src="<%= item.photo %>" />
-</div>
+    <%
+
+var counter = 0;
+
+
+_.each(goods, function(item) {
+
+	counter++;
+
+		$(document).on('click', '.productItem1', function (event) {
+
+   event.stopPropagation();
+    event.stopImmediatePropagation();
+
+
+	var id = 't' + $(this).get(0).attributes[1].value;
+
+	if($('.productItem1ImgOpen').length > 0)
+	{
+
+	 $('#' + id).removeClass('productItem1ImgOpen');
+	}else{
+
+
+	$('#' + id).addClass('productItem1ImgOpen').siblings().removeClass('productItem1ImgOpen');
+	}
+
+
+	//console.log("param: ",$(this).get(0).attributes[1].value);
+
+
+	
+
+});
+
+		%>
+        <div class="productItem1" data-foo="<%= counter %>">
+<div id="t<%= counter %>" class="productItem1Img"><img class="good-item__img" src="<%= item.photo %>"></div>
 <div class="productItem1Cont">
 <h1><%- item.good %></h1>
 <p><%- item.description %> <%- item.sales_notes %></p>
@@ -152,7 +186,15 @@
 </div>
 <div style="clear:both"></div>
 </div>
-    <% }); %>
+    <% });
+
+
+
+
+
+	
+	
+	%>
 </script>
 
 
