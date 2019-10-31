@@ -170,22 +170,25 @@ _.each(goods, function(item) {
 });
 
 		%>
+		<div class="productItem1All">
         <div class="productItem1" data-foo="<%= counter %>">
 <div id="t<%= counter %>" class="productItem1Img"><img class="good-item__img" src="<%= item.photo %>"></div>
 <div class="productItem1Cont">
 <h1><%- item.good %></h1>
 <p><%- item.description %> <%- item.sales_notes %></p>
+</div>
 <div class="productItem1Price"><%= item.price %> руб.</div>
-                <button 
+</div>
+<button 
                     class="good-item__btn-add js-add-to-cart productItem1But"
                     data-id="<%= item.good_id %>"
                     data-name="<%- item.good %>"
                     data-price="<%= item.price %>"
 					data-img="<%= item.photo %>"
                 >ДОБАВИТЬ В КОРЗИНУ</button>
-</div>
-<div style="clear:both"></div>
-</div>
+				<div style="clear:both"></div>
+				</div>
+				
     <% });
 
 
